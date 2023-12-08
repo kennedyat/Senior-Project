@@ -1,5 +1,5 @@
 {
-    "name": "playerInputActions",
+    "name": "PlayerInputActions",
     "maps": [
         {
             "name": "Cashier",
@@ -10,6 +10,15 @@
                     "type": "Button",
                     "id": "fc45ae7a-80e2-496b-907c-9a451698e0c8",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Point",
+                    "type": "PassThrough",
+                    "id": "0a92be5d-28a8-4d35-8d65-337c0a791832",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -24,6 +33,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78323503-a171-4161-9ad2-6994461d4288",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
