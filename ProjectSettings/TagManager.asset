@@ -4,7 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< Updated upstream
   - One
+=======
+  - Button
+  - DollarHolder
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
