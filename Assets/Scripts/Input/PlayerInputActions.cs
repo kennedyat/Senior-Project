@@ -35,15 +35,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Point"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""0a92be5d-28a8-4d35-8d65-337c0a791832"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -55,17 +46,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Grab"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""78323503-a171-4161-9ad2-6994461d4288"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Point"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -138,7 +118,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // Cashier
         m_Cashier = asset.FindActionMap("Cashier", throwIfNotFound: true);
         m_Cashier_Grab = m_Cashier.FindAction("Grab", throwIfNotFound: true);
-        m_Cashier_Point = m_Cashier.FindAction("Point", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -201,13 +180,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Cashier;
     private List<ICashierActions> m_CashierActionsCallbackInterfaces = new List<ICashierActions>();
     private readonly InputAction m_Cashier_Grab;
-    private readonly InputAction m_Cashier_Point;
     public struct CashierActions
     {
         private @PlayerInputActions m_Wrapper;
         public CashierActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Grab => m_Wrapper.m_Cashier_Grab;
-        public InputAction @Point => m_Wrapper.m_Cashier_Point;
         public InputActionMap Get() { return m_Wrapper.m_Cashier; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -220,9 +197,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Grab.started += instance.OnGrab;
             @Grab.performed += instance.OnGrab;
             @Grab.canceled += instance.OnGrab;
-            @Point.started += instance.OnPoint;
-            @Point.performed += instance.OnPoint;
-            @Point.canceled += instance.OnPoint;
         }
 
         private void UnregisterCallbacks(ICashierActions instance)
@@ -230,9 +204,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Grab.started -= instance.OnGrab;
             @Grab.performed -= instance.OnGrab;
             @Grab.canceled -= instance.OnGrab;
-            @Point.started -= instance.OnPoint;
-            @Point.performed -= instance.OnPoint;
-            @Point.canceled -= instance.OnPoint;
         }
 
         public void RemoveCallbacks(ICashierActions instance)
@@ -298,6 +269,5 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface ICashierActions
     {
         void OnGrab(InputAction.CallbackContext context);
-        void OnPoint(InputAction.CallbackContext context);
     }
 }
