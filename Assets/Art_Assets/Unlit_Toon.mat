@@ -34,7 +34,7 @@ Material:
     - _RimThreshold: 0.703
     m_Colors:
     - _AmbientColor: {r: 0.990566, g: 0.35978103, b: 0.35978103, a: 1}
-    - _Color: {r: 0.3786935, g: 0.47867483, b: 0.6981132, a: 1}
+    - _Color: {r: 0.7830189, g: 0.0049245497, b: 0.0049245497, a: 1}
     - _RimColor: {r: 0.36779106, g: 0.55231553, b: 0.8962264, a: 1}
     - _SpecularColor: {r: 0.18195976, g: 0.25961494, b: 0.8207547, a: 1}
   m_BuildTextureStacks: []
