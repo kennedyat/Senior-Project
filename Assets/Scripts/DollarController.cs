@@ -24,7 +24,7 @@ public class DollarController : MonoBehaviour
     void GetDollarValue(){
         dollarValue = currentDollar.GetComponent<DollarValue>();
         animator = currentDollar.GetComponent<Animator>();
-        animator.enabled = true;
+        //animator.enabled = true;
 
     }
 
@@ -35,10 +35,9 @@ public class DollarController : MonoBehaviour
         if(created){
             
             if(DollarAnimatorCheck()){
-                Debug.Log("Anim");
-                animator.enabled = false;
-            DollarRotate(DollarPlacement());
-            created = false;
+                animator.StopPlayback();
+                DollarRotate(DollarPlacement());
+                created = false;
             
             }
             
@@ -58,6 +57,7 @@ public class DollarController : MonoBehaviour
                 string stringVal=hit.collider.gameObject.name.ToString();
                 currentDollar = Instantiate(dollarSpawn, transform.position, transform.rotation);
                 GetDollarValue();
+                animator.Play("MoneyOut");
                 dollarValue.AddValue(int.Parse(stringVal));
                 
                 created = true;
@@ -90,25 +90,29 @@ public class DollarController : MonoBehaviour
         } else if(dollars[dollars.Count - 1].GetComponent<DollarValue>().value<=dollarValue.value){
             dollars.Insert(dollars.Count , currentDollar);
             size = dollars.Count-1; 
+            Debug.Log("Biggest");
 
         } else if(dollars[0].GetComponent<DollarValue>().value>=dollarValue.value){
             dollars.Insert(0, currentDollar);
             size = 0;
+            Debug.Log("Smallest");
 
         } else{
             size=size/2;
             for(int i=0;i<dollars.Count/2;i++){
 
-                Debug.Log(dollars[size-1].GetComponent<DollarValue>().value+ " vs " + dollarValue.value);
                 if(dollars[size-1].GetComponent<DollarValue>().value==dollarValue.value){
                     dollars.Insert(size, currentDollar);
+                    Debug.Log("Equal");
                     break;
                     }
                 if(dollars[size-1].GetComponent<DollarValue>().value> dollarValue.value){
                     size = size/2;
+                    Debug.Log("Less : " + dollars[size-1].GetComponent<DollarValue>().value + " vs " + dollarValue.value);
                 }
                 else{
                     size=(size+dollars.Count)/2;
+                    Debug.Log("Greater : " + dollars[size-1].GetComponent<DollarValue>().value + " vs " + dollarValue.value);
                 }
             }
             
@@ -118,16 +122,23 @@ public class DollarController : MonoBehaviour
         for(int i=0;i<dollars.Count;i++){
             dollarsVal.Add(dollars[i].GetComponent<DollarValue>().value);
         }
-        Debug.Log("~~Size:" + size);
 
        return size;
     }
 
     void DollarRotate(int index){
-        for(int i=0;i<index+1;i++){
-            dollars[i].transform.position = new Vector3(dollars[i].transform.position.x+(.1f*i+1),
-                dollars[i].transform.position.y,dollars[i].transform.position.z);
-            //dollars[index].transform.RotateAround(dollarView.transform.position, Vector3.up, 120);
+        dollars[index].transform.position = new Vector3(dollars[index].transform.position.x,
+               dollars[index].transform.position.y,dollars[index].transform.position.z+(index/dollars.Count)/60);
+         dollars[index].transform.RotateAround(dollarView.transform.position, Vector3.forward, (index-(dollars.Count/2))*5);
+        for(int i=0;i<dollars.Count;i++){
+            //dollars[i].transform.position = new Vector3(dollars[i].transform.position.x+(.1f*i+1),
+               // dollars[i].transform.position.y,dollars[i].transform.position.z);
+            
+            if(i>index){
+                 dollars[i].transform.RotateAround(dollarView.transform.position, Vector3.forward, 5f);
+            }else{
+                dollars[i].transform.RotateAround(dollarView.transform.position, Vector3.forward, -5f);
+            }
         }
     }
 
