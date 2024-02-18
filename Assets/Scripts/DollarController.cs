@@ -5,26 +5,29 @@ using System.Linq;
 
 public class DollarController : MonoBehaviour
 {
+    
+    #region Variables
     public GameObject dollarSpawn;
-    DollarValue dollarValue;
-    public List<GameObject> dollars = new List<GameObject>();
-    public List<int> dollarsVal = new List<int>();
-    GameObject currentDollar;
     public GameObject dollarView;
+    GameObject currentDollar;
+    
+    public List<GameObject> dollars = new List<GameObject>();
+     DollarValue dollarValue;
+    
     Animator animator;
     bool created = false;
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
         animator.enabled = true;
-
-
         dollarValue = dollarSpawn.GetComponent<DollarValue>();
     }
+
     void GetDollarValue(){
         dollarValue = currentDollar.GetComponent<DollarValue>();
         animator = currentDollar.GetComponent<Animator>();
-        //animator.enabled = true;
 
     }
 
@@ -47,19 +50,20 @@ public class DollarController : MonoBehaviour
 
     void Clicked(){
         
-        //Checks if mouse is clicked on
+        //Checks if mouse is clicked on a Dollar Holder
         if(Input.GetMouseButtonDown(0)){
             RaycastHit hit;
 			var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //Gets value of clicked button
             Physics.Raycast(ray, out hit);
             if(hit.collider.gameObject.tag == "DollarHolder"){
+                //Gets value of clicked button from Dollar Holder Value
                 string stringVal=hit.collider.gameObject.name.ToString();
+                //Spawns current dollar that holds the clicked dollar value
                 currentDollar = Instantiate(dollarSpawn, transform.position, transform.rotation);
                 GetDollarValue();
                 animator.Play("MoneyOut");
                 dollarValue.AddValue(int.Parse(stringVal));
-                
+                //When dollar is created, stop animating
                 created = true;
                 
                  Debug.Log(dollarValue.value);
@@ -78,7 +82,6 @@ public class DollarController : MonoBehaviour
 
 
     int DollarPlacement(){
-        dollarsVal.Clear();
         //Determines index where to look for
         int size = dollars.Count;
 
@@ -119,9 +122,7 @@ public class DollarController : MonoBehaviour
             dollars.Insert(size, currentDollar);
            
         }
-        for(int i=0;i<dollars.Count;i++){
-            dollarsVal.Add(dollars[i].GetComponent<DollarValue>().value);
-        }
+       
 
        return size;
     }
