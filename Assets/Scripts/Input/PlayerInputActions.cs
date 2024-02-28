@@ -35,6 +35,33 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Selection"",
+                    ""type"": ""Button"",
+                    ""id"": ""162b85f6-2a78-4caa-adc6-8070564bb830"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""6416db99-c4ca-4b5b-aed8-4be57653bdde"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Tap(duration=0.3)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inclusive"",
+                    ""type"": ""Button"",
+                    ""id"": ""06f668b1-8613-413c-8573-4a4f893b45ea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -46,6 +73,39 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db934035-1b52-454d-a00b-2ba5db9e2d8b"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Selection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e30a16ef-a442-464a-96df-2a055f90f626"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": ""Tap(duration=0.3)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55c7fa0e-7306-4632-ba73-4ba987a18ea3"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inclusive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -118,6 +178,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // Cashier
         m_Cashier = asset.FindActionMap("Cashier", throwIfNotFound: true);
         m_Cashier_Grab = m_Cashier.FindAction("Grab", throwIfNotFound: true);
+        m_Cashier_Selection = m_Cashier.FindAction("Selection", throwIfNotFound: true);
+        m_Cashier_Select = m_Cashier.FindAction("Select", throwIfNotFound: true);
+        m_Cashier_Inclusive = m_Cashier.FindAction("Inclusive", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -180,11 +243,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Cashier;
     private List<ICashierActions> m_CashierActionsCallbackInterfaces = new List<ICashierActions>();
     private readonly InputAction m_Cashier_Grab;
+    private readonly InputAction m_Cashier_Selection;
+    private readonly InputAction m_Cashier_Select;
+    private readonly InputAction m_Cashier_Inclusive;
     public struct CashierActions
     {
         private @PlayerInputActions m_Wrapper;
         public CashierActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Grab => m_Wrapper.m_Cashier_Grab;
+        public InputAction @Selection => m_Wrapper.m_Cashier_Selection;
+        public InputAction @Select => m_Wrapper.m_Cashier_Select;
+        public InputAction @Inclusive => m_Wrapper.m_Cashier_Inclusive;
         public InputActionMap Get() { return m_Wrapper.m_Cashier; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -197,6 +266,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Grab.started += instance.OnGrab;
             @Grab.performed += instance.OnGrab;
             @Grab.canceled += instance.OnGrab;
+            @Selection.started += instance.OnSelection;
+            @Selection.performed += instance.OnSelection;
+            @Selection.canceled += instance.OnSelection;
+            @Select.started += instance.OnSelect;
+            @Select.performed += instance.OnSelect;
+            @Select.canceled += instance.OnSelect;
+            @Inclusive.started += instance.OnInclusive;
+            @Inclusive.performed += instance.OnInclusive;
+            @Inclusive.canceled += instance.OnInclusive;
         }
 
         private void UnregisterCallbacks(ICashierActions instance)
@@ -204,6 +282,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Grab.started -= instance.OnGrab;
             @Grab.performed -= instance.OnGrab;
             @Grab.canceled -= instance.OnGrab;
+            @Selection.started -= instance.OnSelection;
+            @Selection.performed -= instance.OnSelection;
+            @Selection.canceled -= instance.OnSelection;
+            @Select.started -= instance.OnSelect;
+            @Select.performed -= instance.OnSelect;
+            @Select.canceled -= instance.OnSelect;
+            @Inclusive.started -= instance.OnInclusive;
+            @Inclusive.performed -= instance.OnInclusive;
+            @Inclusive.canceled -= instance.OnInclusive;
         }
 
         public void RemoveCallbacks(ICashierActions instance)
@@ -269,5 +356,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface ICashierActions
     {
         void OnGrab(InputAction.CallbackContext context);
+        void OnSelection(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
+        void OnInclusive(InputAction.CallbackContext context);
     }
 }
