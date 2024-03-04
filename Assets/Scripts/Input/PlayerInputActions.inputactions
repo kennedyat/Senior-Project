@@ -13,6 +13,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Selection",
+                    "type": "Button",
+                    "id": "162b85f6-2a78-4caa-adc6-8070564bb830",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "6416db99-c4ca-4b5b-aed8-4be57653bdde",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap(duration=0.3)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Inclusive",
+                    "type": "Button",
+                    "id": "06f668b1-8613-413c-8573-4a4f893b45ea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -24,6 +51,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "db934035-1b52-454d-a00b-2ba5db9e2d8b",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Selection",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e30a16ef-a442-464a-96df-2a055f90f626",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Tap(duration=0.3)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55c7fa0e-7306-4632-ba73-4ba987a18ea3",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inclusive",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

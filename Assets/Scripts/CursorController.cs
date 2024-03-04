@@ -16,8 +16,8 @@ public class CursorController : MonoBehaviour
 
 
     private InputAction grab;
-    public Transform selection = null;
-    public Vector2 previousMousePos = Vector2.zero;
+    private InputAction select;
+    private InputAction selection;
 
     private void Awake()
     {
@@ -29,10 +29,15 @@ public class CursorController : MonoBehaviour
     private void OnEnable()
     {
         grab = playerControls.Cashier.Grab;
+        selection = playerControls.Cashier.Selection;
+
         grab.Enable();
+        selection.Enable();
 
         grab.started += Grab;
         grab.canceled += Drop;
+        selection.started += Grab;
+        selection.canceled += Drop;
     }
 
 
@@ -55,11 +60,6 @@ public class CursorController : MonoBehaviour
     private void Drop(InputAction.CallbackContext context)
     {
         ChangeCursor(cursor);
-    }
-
-    private void DragObject(Transform transform, Vector3 translation)
-    {
-        transform.position += new Vector3(-translation.x, translation.y, translation.z);
     }
 
     void Update()
