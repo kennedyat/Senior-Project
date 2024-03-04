@@ -15,6 +15,9 @@ public class DollarController : MonoBehaviour
      DollarValue dollarValue;
     
     Animator animator;
+    //Placeholder position for dollars on counter 
+    Vector3 counterPosition = new Vector3(-0.59f,0.294f,-0.14f);
+    float spaceBetweenDollars=.1f;
     bool created = false;
     #endregion
 
@@ -59,7 +62,7 @@ public class DollarController : MonoBehaviour
                 //Gets value of clicked button from Dollar Holder Value
                 string stringVal=hit.collider.gameObject.name.ToString();
                 //Spawns current dollar that holds the clicked dollar value
-                currentDollar = Instantiate(dollarSpawn, transform.position, transform.rotation);
+                currentDollar = Instantiate(dollarSpawn, hit.collider.gameObject.transform.position, transform.rotation);
                 GetDollarValue();
                 animator.Play("MoneyOut");
                 dollarValue.AddValue(int.Parse(stringVal));
@@ -68,9 +71,11 @@ public class DollarController : MonoBehaviour
                 
                  Debug.Log(dollarValue.value);
             }
-            else{
+            else if(hit.collider.gameObject.tag == "Counter"){
+               PlaceCounter();
+            } else{
                 //If button is not pressed
-               Debug.Log("Nothing Pressed");
+                Debug.Log("Nothing Pressed");
             }
         }
         
@@ -93,12 +98,10 @@ public class DollarController : MonoBehaviour
         } else if(dollars[dollars.Count - 1].GetComponent<DollarValue>().value<=dollarValue.value){
             dollars.Insert(dollars.Count , currentDollar);
             size = dollars.Count-1; 
-            Debug.Log("Biggest");
 
         } else if(dollars[0].GetComponent<DollarValue>().value>=dollarValue.value){
             dollars.Insert(0, currentDollar);
             size = 0;
-            Debug.Log("Smallest");
 
         } else{
             size=size/2;
@@ -117,10 +120,7 @@ public class DollarController : MonoBehaviour
                     size=(size+dollars.Count)/2;
                     Debug.Log("Greater : " + dollars[size-1].GetComponent<DollarValue>().value + " vs " + dollarValue.value);
                 }
-            }
-            
-            dollars.Insert(size, currentDollar);
-           
+            }           
         }
        
 
@@ -128,8 +128,24 @@ public class DollarController : MonoBehaviour
     }
 
     void DollarRotate(int index){
-        dollars[index].transform.position = new Vector3(dollars[index].transform.position.x,
-               dollars[index].transform.position.y,dollars[index].transform.position.z+(index/dollars.Count)/60);
+
+        int counter=dollars.Count/2;
+        dollars[index].transform.RotateAround(dollarView.transform.position, Vector3.forward, (index-(dollars.Count/2))*5);
+        for(int i=0; i<dollars.Count; i++){
+            dollars[i].transform.position = new Vector3(dollarView.transform.position.x+(spaceBetweenDollars*counter),
+            dollarView.transform.position.y,dollarView.transform.position.z+(-.005f*counter)); 
+            if(i>index){
+                 dollars[i].transform.RotateAround(dollarView.transform.position, Vector3.forward, 5f);
+            }else if(i<index){
+                dollars[i].transform.RotateAround(dollarView.transform.position, Vector3.forward, -5f);
+            }
+            counter--;
+           
+        
+        }
+        
+        /*dollars[index].transform.position = new Vector3(dollarView.transform.position.x,
+               dollarView.transform.position.y,dollarView.transform.position.z+(index/dollars.Count)/60);
          dollars[index].transform.RotateAround(dollarView.transform.position, Vector3.forward, (index-(dollars.Count/2))*5);
         for(int i=0;i<dollars.Count;i++){
             //dollars[i].transform.position = new Vector3(dollars[i].transform.position.x+(.1f*i+1),
@@ -140,7 +156,7 @@ public class DollarController : MonoBehaviour
             }else{
                 dollars[i].transform.RotateAround(dollarView.transform.position, Vector3.forward, -5f);
             }
-        }
+        }*/
     }
 
     bool DollarAnimatorCheck(){
@@ -148,6 +164,18 @@ public class DollarController : MonoBehaviour
         return animator.GetCurrentAnimatorStateInfo(0).length >
            animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
 
+    }
+
+    void PlaceCounter(){
+        int index=0;
+        foreach(GameObject dol in dollars){
+            dol.transform.position = new Vector3(counterPosition.x
+            , counterPosition.y + .01f*index,
+         counterPosition.z);
+            //dol.transform.position = counterPosition;
+            dol.transform.rotation = new Quaternion(0f,0f, 0f, 0f);
+            index++;
+        }
     }
 
 

@@ -11,7 +11,7 @@ public class Money : MonoBehaviour
     private float zoomVal = 1.2f;
     public float value;
     // This variable shows whether the money is in the docked view where it can be grouped
-    private bool docked = false;
+    private bool docked = true;
 
     private Vector3 GetMousePos()
     {

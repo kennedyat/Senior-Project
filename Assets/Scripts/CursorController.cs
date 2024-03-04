@@ -59,7 +59,7 @@ public class CursorController : MonoBehaviour
 
     private void DragObject(Transform transform, Vector3 translation)
     {
-        transform.position += translation;
+        transform.position += new Vector3(-translation.x, translation.y, translation.z);
     }
 
     void Update()
