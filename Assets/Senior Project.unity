@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 265665326}
   - component: {fileID: 265665325}
   - component: {fileID: 265665330}
+  - component: {fileID: 265665331}
   m_Layer: 3
   m_Name: Dollar (1)
   m_TagString: One
@@ -237,7 +238,7 @@ Transform:
   m_GameObject: {fileID: 265665324}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.21, y: 0.08, z: 0}
+  m_LocalPosition: {x: 2.21, y: 0.08, z: 9}
   m_LocalScale: {x: 1, y: 2.2568, z: 0.22956}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -255,6 +256,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae7468f5a0309f41966f038c874b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &265665331
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265665324}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &444093331
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 485292281}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -532,6 +560,7 @@ GameObject:
   - component: {fileID: 1823061874}
   - component: {fileID: 1823061873}
   - component: {fileID: 1823061878}
+  - component: {fileID: 1823061879}
   m_Layer: 3
   m_Name: Dollar (2)
   m_TagString: One
@@ -632,7 +661,7 @@ Transform:
   m_GameObject: {fileID: 1823061872}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.71, y: 0.22, z: 0}
+  m_LocalPosition: {x: 5.71, y: 0.22, z: 9}
   m_LocalScale: {x: 1, y: 2.2568, z: 0.22956}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -650,6 +679,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae7468f5a0309f41966f038c874b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1823061879
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823061872}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2057316194
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +827,7 @@ GameObject:
   - component: {fileID: 2135003897}
   - component: {fileID: 2135003901}
   - component: {fileID: 2135003902}
+  - component: {fileID: 2135003903}
   m_Layer: 3
   m_Name: Dollar
   m_TagString: One
@@ -858,7 +915,7 @@ Transform:
   m_GameObject: {fileID: 2135003896}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 9}
   m_LocalScale: {x: 1, y: 2.2568, z: 0.22956}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -889,6 +946,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae7468f5a0309f41966f038c874b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &2135003903
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135003896}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2140382894
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,7 +1073,7 @@ Transform:
   m_GameObject: {fileID: 2140382894}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: 0.0261, y: -0.0525, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1.0146813, y: 2, z: 2.193708}
   m_ConstrainProportionsScale: 0
   m_Children: []

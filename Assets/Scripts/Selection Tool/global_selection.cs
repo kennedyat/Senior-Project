@@ -84,10 +84,6 @@ public class global_selection : MonoBehaviour
 
     private void SelectionStart(InputAction.CallbackContext context)
     {
-        /*if (!includes)
-        {
-            selected_table.deselectAll();
-        }*/
         p1 = Input.mousePosition;
         selecting = true;
     }
@@ -133,7 +129,7 @@ public class global_selection : MonoBehaviour
                 {
                     Ray ray = Camera.main.ScreenPointToRay(corner);
 
-                    if (Physics.Raycast(ray, out hit, 50000.0f/*, (1 << 8)*/))
+                    if (Physics.Raycast(ray, out hit, 50000.0f, 1 << 6))
                     {
                         verts[i] = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                         vecs[i] = ray.origin - hit.point;
@@ -219,9 +215,11 @@ public class global_selection : MonoBehaviour
             verts[j] = corners[j - 4] + vecs[j - 4];
         }
 
-        Mesh selectionMesh = new Mesh();
-        selectionMesh.vertices = verts;
-        selectionMesh.triangles = tris;
+        Mesh selectionMesh = new Mesh
+        {
+            vertices = verts,
+            triangles = tris
+        };
 
         return selectionMesh;
     }
@@ -235,7 +233,7 @@ public class global_selection : MonoBehaviour
     private IEnumerator NewSelection()
     {
         selected_table.deselectAll();
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.00001f);
         selected_table.addSelected(hit.transform.gameObject);
     }
 
