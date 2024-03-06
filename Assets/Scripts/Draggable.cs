@@ -14,7 +14,10 @@ public class Draggable : MonoBehaviour
 
     private Vector3 GetMousePos()
     {
-        return Camera.main.WorldToScreenPoint(transform.position);
+        if (transform.parent == null)
+            return Camera.main.WorldToScreenPoint(transform.position);
+        else
+            return Camera.main.WorldToScreenPoint(transform.parent.position);
     }
 
     private void OnMouseDown()
@@ -24,7 +27,10 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
+        if (transform.parent == null)
+            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
+        else
+            transform.parent.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
     }
 
     private void OnMouseEnter()
