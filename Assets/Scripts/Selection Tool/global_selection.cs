@@ -46,26 +46,26 @@ public class global_selection : MonoBehaviour
     }
 
     private void Awake()
-        {
-            playerControls = new PlayerInputActions();
-        }
+    {
+        playerControls = new PlayerInputActions();
+    }
 
     private void OnEnable()
-        {
-            select = playerControls.Cashier.Select;
-            selection = playerControls.Cashier.Selection;
-            inclusive = playerControls.Cashier.Inclusive;
+    {
+        select = playerControls.Cashier.Select;
+        selection = playerControls.Cashier.Selection;
+        inclusive = playerControls.Cashier.Inclusive;
 
-            select.Enable();
-            selection.Enable();
-            inclusive.Enable();
+        select.Enable();
+        selection.Enable();
+        inclusive.Enable();
 
-            select.performed += Select;
-            selection.started += SelectionStart;
-            selection.canceled += SelectionEnd;
-            inclusive.started += Includes;
-            inclusive.canceled += Excludes;
-        }
+        select.performed += Select;
+        selection.started += SelectionStart;
+        selection.canceled += SelectionEnd;
+        inclusive.started += Includes;
+        inclusive.canceled += Excludes;
+    }
 
     // Update is called once per frame
     void Update()
