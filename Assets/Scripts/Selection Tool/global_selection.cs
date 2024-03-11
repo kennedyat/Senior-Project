@@ -226,7 +226,10 @@ public class global_selection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        selected_table.addSelected(other.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Selectable"))
+        {
+            selected_table.addSelected(other.gameObject);
+        }
     }
 
     // I had to add this coroutine due to the deselect occurring after the selection is made
