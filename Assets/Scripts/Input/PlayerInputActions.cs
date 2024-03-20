@@ -62,6 +62,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Group"",
+                    ""type"": ""Button"",
+                    ""id"": ""8285b245-fa33-49f1-bf51-60482abf271a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -106,6 +115,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Inclusive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04148071-7a7e-447f-aeb0-d52849093de7"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Group"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -181,6 +201,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Cashier_Selection = m_Cashier.FindAction("Selection", throwIfNotFound: true);
         m_Cashier_Select = m_Cashier.FindAction("Select", throwIfNotFound: true);
         m_Cashier_Inclusive = m_Cashier.FindAction("Inclusive", throwIfNotFound: true);
+        m_Cashier_Group = m_Cashier.FindAction("Group", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -246,6 +267,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Cashier_Selection;
     private readonly InputAction m_Cashier_Select;
     private readonly InputAction m_Cashier_Inclusive;
+    private readonly InputAction m_Cashier_Group;
     public struct CashierActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -254,6 +276,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Selection => m_Wrapper.m_Cashier_Selection;
         public InputAction @Select => m_Wrapper.m_Cashier_Select;
         public InputAction @Inclusive => m_Wrapper.m_Cashier_Inclusive;
+        public InputAction @Group => m_Wrapper.m_Cashier_Group;
         public InputActionMap Get() { return m_Wrapper.m_Cashier; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -275,6 +298,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Inclusive.started += instance.OnInclusive;
             @Inclusive.performed += instance.OnInclusive;
             @Inclusive.canceled += instance.OnInclusive;
+            @Group.started += instance.OnGroup;
+            @Group.performed += instance.OnGroup;
+            @Group.canceled += instance.OnGroup;
         }
 
         private void UnregisterCallbacks(ICashierActions instance)
@@ -291,6 +317,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Inclusive.started -= instance.OnInclusive;
             @Inclusive.performed -= instance.OnInclusive;
             @Inclusive.canceled -= instance.OnInclusive;
+            @Group.started -= instance.OnGroup;
+            @Group.performed -= instance.OnGroup;
+            @Group.canceled -= instance.OnGroup;
         }
 
         public void RemoveCallbacks(ICashierActions instance)
@@ -359,5 +388,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnSelection(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
         void OnInclusive(InputAction.CallbackContext context);
+        void OnGroup(InputAction.CallbackContext context);
     }
 }
