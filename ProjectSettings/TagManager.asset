@@ -7,14 +7,16 @@ TagManager:
   - Button
   - DollarHolder
   - Counter
+  - One
+  - Parent
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Draggable
+  - Selectable
   - Water
   - UI
-  - Desk
+  - Selection Bounds
   - 
   - 
   - 

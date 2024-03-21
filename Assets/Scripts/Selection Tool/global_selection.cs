@@ -8,7 +8,6 @@ public class global_selection : MonoBehaviour
     
     public PlayerInputActions playerControls;
 
-    private InputAction select;
     private InputAction selection;
     private InputAction inclusive;
 
@@ -52,15 +51,12 @@ public class global_selection : MonoBehaviour
 
     private void OnEnable()
     {
-        select = playerControls.Cashier.Select;
         selection = playerControls.Cashier.Selection;
         inclusive = playerControls.Cashier.Inclusive;
 
-        select.Enable();
         selection.Enable();
         inclusive.Enable();
 
-        select.performed += Select;
         selection.started += SelectionStart;
         selection.canceled += SelectionEnd;
         inclusive.started += Includes;
@@ -75,11 +71,6 @@ public class global_selection : MonoBehaviour
                 Debug.Log("Selection is Moving!");
                 dragSelect = true;
             }
-    }
-
-    private void Select(InputAction.CallbackContext context)
-    {
-        
     }
 
     private void SelectionStart(InputAction.CallbackContext context)
@@ -226,7 +217,10 @@ public class global_selection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        selected_table.addSelected(other.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Selectable"))
+        {
+            selected_table.addSelected(other.gameObject);
+        }
     }
 
     // I had to add this coroutine due to the deselect occurring after the selection is made
