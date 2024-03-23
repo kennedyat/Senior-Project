@@ -10,6 +10,8 @@ public class global_selection : MonoBehaviour
 
     private InputAction selection;
     private InputAction inclusive;
+    private InputAction group;
+    public GameObject parent;
 
     public bool includes = false;
     public bool selecting = false;
@@ -53,14 +55,17 @@ public class global_selection : MonoBehaviour
     {
         selection = playerControls.Cashier.Selection;
         inclusive = playerControls.Cashier.Inclusive;
+        group = playerControls.Cashier.Group;
 
         selection.Enable();
         inclusive.Enable();
+        group.Enable();
 
         selection.started += SelectionStart;
         selection.canceled += SelectionEnd;
         inclusive.started += Includes;
         inclusive.canceled += Excludes;
+        group.performed += Group;
     }
 
     // Update is called once per frame
@@ -229,6 +234,11 @@ public class global_selection : MonoBehaviour
         selected_table.deselectAll();
         yield return new WaitForSeconds(0.00001f);
         selected_table.addSelected(hit.transform.gameObject);
+    }
+
+    private void Group(InputAction.CallbackContext context)
+    {
+        Instantiate(parent);
     }
 
 }
