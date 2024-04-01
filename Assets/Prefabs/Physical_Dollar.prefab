@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7382792265006584733}
   m_Layer: 3
   m_Name: Physical_Dollar
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae7468f5a0309f41966f038c874b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundary: {fileID: 0}
+  editView: 0
 --- !u!54 &7382792265006584733
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -180,5 +182,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
