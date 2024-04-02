@@ -15,19 +15,31 @@ public class RegisterState : MonoBehaviour
    
     public Animator _anim;
 
+    float zLimitForward;
+    float zLimitBackward;
+
     void Start(){
         initialPosition = transform.position;
+        zLimitBackward = initialPosition.z;
+        zLimitForward = initialPosition.z + .8f;
     }
     void Update(){
         
+        if(_mainState==true){
+            transform.position = initialPosition;
+           Drawer.transform.position = initialPosition;
+            
+        }
         if (_anim.GetCurrentAnimatorStateInfo(0).IsName("Opening")&&_anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_anim.IsInTransition(0)){
            Debug.Log("Anim Ended");
            if(_mainState==true){
                 Follow();
                 _mainState=false;
+                
                 //_anim.SetBool("OpenState", true);
            }
         } 
+
 
     }
 
@@ -64,12 +76,20 @@ public class RegisterState : MonoBehaviour
     }
 
     private void OnMouseDrag(){
+        float zPos;
         if(_mainState == false){
-            
-           transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos).z);
-
+          
+           zPos = Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos).z,zLimitBackward,zLimitForward);
+           transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
+            if(zPos<=zLimitBackward){
+                
+                _anim.SetBool("OpenState", false);
+                _mainState=true; 
+                 Drawer.transform.parent = null;
+            }
         }
-     }
+       
+    }
 
      void OnTriggerEnter(Collider other){
         if(other.name == "RegisterTrigger" && _mainState == false){
