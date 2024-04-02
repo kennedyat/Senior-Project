@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
 
     public GameObject pauseMenu;
@@ -13,7 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pauseMenu.SetActive(false);
+        //pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -52,13 +52,16 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        Debug.Log("Loading Menu");
         Time.timeScale = 1f;
-        //SceneManager.LoadScene("");
+        //SceneManager.LoadScene("Main Menu");
 
     }
 
     public void QuitGame()
     {
+        Debug.Log("Quitting Game");
         Application.Quit();
+
     }
 }
