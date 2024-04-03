@@ -31,7 +31,11 @@ public class Draggable : MonoBehaviour
         if (transform.parent == null)
             return Camera.main.WorldToScreenPoint(transform.position);
         else
+        {
+            foreach (Transform child in transform.parent.transform)
+                child.gameObject.GetComponent<Rigidbody>().useGravity = false;
             return Camera.main.WorldToScreenPoint(transform.parent.position);
+        }
     }
 
     private void OnMouseDown()
@@ -61,6 +65,15 @@ public class Draggable : MonoBehaviour
         if (zoom)
         {
             transform.localScale /= zoomVal;
+        }
+    }
+
+    private void OnMouseUp()
+    {
+        if (transform.parent)
+        {
+            foreach (Transform child in transform.parent.transform)
+                child.gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }
