@@ -7,8 +7,9 @@ TagManager:
   - Button
   - DollarHolder
   - Counter
-  - One
   - Parent
+  - Bounds
+  - Money
   layers:
   - Default
   - TransparentFX
