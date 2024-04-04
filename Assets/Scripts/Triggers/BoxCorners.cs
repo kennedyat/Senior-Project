@@ -16,7 +16,7 @@ public class BoxCorners : MonoBehaviour
         fnw = transform.TransformPoint(b.center + new Vector3(b.size.x, b.size.y, b.size.z) * 0.5f);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger Entered!");
         if (other.CompareTag("Money"))
