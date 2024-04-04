@@ -24,7 +24,7 @@ public class RegisterState : MonoBehaviour
         zLimitForward = initialPosition.z + .8f;
     }
     void Update(){
-        
+        Debug.Log("Update");
         if(_mainState==true){
             transform.position = initialPosition;
            Drawer.transform.position = initialPosition;
@@ -60,7 +60,6 @@ public class RegisterState : MonoBehaviour
     }
     private void Pull(){
 
-        Debug.Log("Openedstate is false");  
 
          _anim.SetBool("OpenState", true);
         
