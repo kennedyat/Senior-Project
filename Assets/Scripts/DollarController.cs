@@ -8,13 +8,13 @@ public class DollarController : MonoBehaviour
     
     #region Variables
     public GameObject dollarSpawn;
-    public GameObject dollarView;
+
+   
     GameObject currentDollar;
     
-    public List<GameObject> dollars = new List<GameObject>();
+   
      DollarValue dollarValue;
     
-    Animator animator;
     //Placeholder position for dollars on counter 
     Vector3 counterPosition = new Vector3(-0.59f,0.294f,-0.14f);
     float spaceBetweenDollars=.1f;
@@ -24,60 +24,48 @@ public class DollarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator.enabled = true;
+
         dollarValue = dollarSpawn.GetComponent<DollarValue>();
     }
 
     void GetDollarValue(){
         dollarValue = currentDollar.GetComponent<DollarValue>();
-        animator = currentDollar.GetComponent<Animator>();
+    
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Clicked();
-        if(created){
-            
-            if(DollarAnimatorCheck()){
-                animator.StopPlayback();
-                DollarRotate(DollarPlacement());
-                created = false;
-            
-            }
-            
-        }
-        
+         if(Input.GetMouseButtonDown(0)){
+            Clicked();
+         }
     }
 
     void Clicked(){
         
         //Checks if mouse is clicked on a Dollar Holder
-        if(Input.GetMouseButtonDown(0)){
+       
+            Debug.Log("CLicking");
             RaycastHit hit;
 			var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(ray, out hit);
             if(hit.collider.gameObject.tag == "DollarHolder"){
+                dollarValue = hit.collider.gameObject.GetComponent<DollarValue>();
+                Debug.Log("CLicking DollarHolder");
                 //Gets value of clicked button from Dollar Holder Value
-                string stringVal=hit.collider.gameObject.name.ToString();
+               // string stringVal=hit.collider.gameObject.name.ToString();
                 //Spawns current dollar that holds the clicked dollar value
-                currentDollar = Instantiate(dollarSpawn, hit.collider.gameObject.transform.position, transform.rotation);
-                GetDollarValue();
-                animator.Play("MoneyOut");
-                dollarValue.AddValue(int.Parse(stringVal));
+                currentDollar = Instantiate(dollarSpawn, hit.collider.gameObject.transform.position, dollarSpawn.transform.rotation);
+                //GetDollarValue();
+               // dollarValue.AddValue(int.Parse(stringVal));
                 //When dollar is created, stop animating
-                created = true;
+                //created = true;
                 
-                 Debug.Log(dollarValue.value);
+                // Debug.Log(dollarValue.value);
             }
-            else if(hit.collider.gameObject.tag == "Counter"){
-               PlaceCounter();
-            } else{
-                //If button is not pressed
-                Debug.Log("Nothing Pressed");
-            }
-        }
+        
+            
         
     }
     //Check if there is a greater value or lower value than currrent dollar
@@ -86,7 +74,7 @@ public class DollarController : MonoBehaviour
     //half value and continue to check middle
 
 
-    int DollarPlacement(){
+    /*int DollarPlacement(){
         //Determines index where to look for
         int size = dollars.Count;
 
@@ -144,7 +132,7 @@ public class DollarController : MonoBehaviour
         
         }
         
-        /*dollars[index].transform.position = new Vector3(dollarView.transform.position.x,
+        dollars[index].transform.position = new Vector3(dollarView.transform.position.x,
                dollarView.transform.position.y,dollarView.transform.position.z+(index/dollars.Count)/60);
          dollars[index].transform.RotateAround(dollarView.transform.position, Vector3.forward, (index-(dollars.Count/2))*5);
         for(int i=0;i<dollars.Count;i++){
@@ -156,7 +144,7 @@ public class DollarController : MonoBehaviour
             }else{
                 dollars[i].transform.RotateAround(dollarView.transform.position, Vector3.forward, -5f);
             }
-        }*/
+        }
     }
 
     bool DollarAnimatorCheck(){
@@ -185,5 +173,5 @@ public class DollarController : MonoBehaviour
     // larger value overlaps
     //change position the angle
 
-
+*/
 }
