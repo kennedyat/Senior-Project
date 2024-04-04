@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Draggable : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Draggable : MonoBehaviour
     private bool zoom = false;
     public BoxCorners boundary;
     public bool editView = false;
+    [Header("Events")]
+    public GameEvent submitEvent;
 
     private void Update()
     {
@@ -72,6 +75,8 @@ public class Draggable : MonoBehaviour
     {
         if (transform.parent)
         {
+            if (gameObject.GetComponentInParent<GroupValue>().submittable)
+                submitEvent.Raise();
             foreach (Transform child in transform.parent.transform)
                 child.gameObject.GetComponent<Rigidbody>().useGravity = true;
         }

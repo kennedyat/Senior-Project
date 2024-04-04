@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Events;
 
 public class GroupValue : MonoBehaviour
 {
     
     public PlayerInputActions playerControls;
-    private InputAction select;
     [SerializeField] private float value;
+    public bool submittable = false;
+
     void Awake()
     {
         playerControls = new PlayerInputActions();
