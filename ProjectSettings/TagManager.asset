@@ -7,14 +7,17 @@ TagManager:
   - Button
   - DollarHolder
   - Counter
+  - Parent
+  - Bounds
+  - Money
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Selectable
   - Water
   - UI
-  - 
+  - Selection Bounds
   - 
   - 
   - 

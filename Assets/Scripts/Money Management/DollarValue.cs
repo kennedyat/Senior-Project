@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DollarValue : MonoBehaviour
@@ -7,11 +8,12 @@ public class DollarValue : MonoBehaviour
     public int value;
     Renderer _mat;
 
+    // Start is called before the first frame update
     void Start(){
         _mat = GetComponent<Renderer>();
 
     }
-    // Start is called before the first frame update
+    
     public void AddValue(int assigned_Value){
         value = assigned_Value;
          _mat = GetComponent<Renderer>();
