@@ -4014,6 +4014,7 @@ GameObject:
   - component: {fileID: 1088261719}
   - component: {fileID: 1088261723}
   - component: {fileID: 1088261722}
+  - component: {fileID: 1088261724}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4063,7 +4064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517be502094959147a17e186191c6cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
   includes: 0
   selecting: 0
   dragDeadzone: 40
@@ -4092,6 +4092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dollars: []
+  grouper: {fileID: 4183982123696054602, guid: d1259d9fb17d9da4eb899b9fd1cf2782, type: 3}
 --- !u!82 &1088261719
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4275,6 +4276,46 @@ MonoBehaviour:
   m_DefaultActionMap: Cashier
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1088261724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088261711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e45f2d816b501040ade238864228c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 05d29ec798965d84ebe3868f0672cdfb, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1088261717}
+        m_TargetAssemblyTypeName: selected_dictionary, Assembly-CSharp
+        m_MethodName: deselectAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1088261718}
+        m_TargetAssemblyTypeName: MoneyGrouper, Assembly-CSharp
+        m_MethodName: onSubmissionViewEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1116859010
 GameObject:
   m_ObjectHideFlags: 0
@@ -8173,6 +8214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5b35657fc3e1c41a15966e9867b083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  submissionView: {fileID: 11400000, guid: 05d29ec798965d84ebe3868f0672cdfb, type: 2}
   Drawer: {fileID: 627453061}
   FollowTarget: {fileID: 63196490}
   _anim: {fileID: 1427723975}

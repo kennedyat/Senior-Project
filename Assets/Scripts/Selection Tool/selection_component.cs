@@ -8,15 +8,15 @@ public class selection_component : MonoBehaviour
     void Start()
     {
         GetComponent<Renderer>().material.color = Color.green;
-        gameObject.transform.parent = GameObject.FindGameObjectWithTag("Parent").transform;
-        gameObject.transform.parent.gameObject.GetComponent<GroupValue>().AddValue(gameObject.GetComponent<DollarValue>().value);
+        transform.parent = GameObject.FindGameObjectWithTag("Parent").transform;
+        transform.parent.gameObject.GetComponent<GroupValue>().AddValue(gameObject.GetComponent<DollarValue>().value);
     }
 
     //This returns the texture when deselected
     private void OnDestroy()
     {
         GetComponent<Renderer>().material.color = Color.white;
-        gameObject.transform.parent.gameObject.GetComponent<GroupValue>().SubtractValue(gameObject.GetComponent<DollarValue>().value);
-        gameObject.transform.parent = null;
+        transform.parent.gameObject.GetComponent<GroupValue>().SubtractValue(gameObject.GetComponent<DollarValue>().value);
+        transform.parent = null;
     }
 }

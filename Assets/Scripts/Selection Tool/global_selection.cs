@@ -11,7 +11,6 @@ public class global_selection : MonoBehaviour
     private InputAction selection;
     private InputAction inclusive;
     private InputAction group;
-    public GameObject parent;
 
     public bool includes = false;
     public bool selecting = false;
@@ -235,11 +234,5 @@ public class global_selection : MonoBehaviour
         yield return new WaitForSeconds(0.00001f);
         selected_table.addSelected(hit.transform.gameObject);
     }
-
-    /*private void Group(InputAction.CallbackContext context)
-    {
-        Instantiate(parent);
-        gameObject.transform.parent = GameObject.FindGameObjectWithTag("Parent").transform;
-    }*/
 
 }
