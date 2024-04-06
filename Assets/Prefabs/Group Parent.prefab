@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7884462992197099444}
   - component: {fileID: -3615657596977825914}
+  - component: {fileID: 2124420960020155907}
   m_Layer: 0
   m_Name: Group Parent
   m_TagString: Untagged
@@ -41,7 +42,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 4183982123696054602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 749668ac1b1dab04b8a8ce2d0083123d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dfb0d84a0cd11741a03d950dde7edd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
+  submittable: 0
+--- !u!114 &2124420960020155907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183982123696054602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e45f2d816b501040ade238864228c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d348dd856f7d7a14f803a98a2ac6cb88, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls: []

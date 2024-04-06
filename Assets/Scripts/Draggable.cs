@@ -76,7 +76,7 @@ public class Draggable : MonoBehaviour
         if (transform.parent)
         {
             if (gameObject.GetComponentInParent<GroupValue>().submittable)
-                submitEvent.Raise();
+                submitEvent.Raise(this, gameObject.GetComponentInParent<GroupValue>().GetValue());
             foreach (Transform child in transform.parent.transform)
                 child.gameObject.GetComponent<Rigidbody>().useGravity = true;
         }

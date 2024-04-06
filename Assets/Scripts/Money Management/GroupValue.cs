@@ -6,7 +6,7 @@ public class GroupValue : MonoBehaviour
 {
     
     public PlayerInputActions playerControls;
-    [SerializeField] private float value;
+    [SerializeField] float value;
     public bool submittable = false;
 
     void Awake()
@@ -15,13 +15,18 @@ public class GroupValue : MonoBehaviour
         value = 0;
     }
 
-    public void AddValue(int value)
+    public void AddValue(float value)
     {
         this.value += value;
     }
 
-    public void SubtractValue(int value)
+    public void SubtractValue(float value)
     {
         this.value -= value;
+    }
+
+    public float GetValue()
+    {
+        return value;
     }
 }
