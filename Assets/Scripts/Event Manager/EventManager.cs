@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventSystem : MonoBehaviour
+public class EventManager : MonoBehaviour
 {
 
     // This is basically the player's score
