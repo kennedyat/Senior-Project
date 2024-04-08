@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art_Assets/Character Designs.meta
 guid: 3ad93aab76ea2974899153d65133c8f8
 folderAsset: yes
 DefaultImporter:
@@ -6,3 +7,6 @@ DefaultImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+========
+guid: 4171715be3e1c443c84166770c3cddc9
+>>>>>>>> MonTrell:Assets/MonTrell Nelson.meta

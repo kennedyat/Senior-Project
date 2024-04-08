@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/ButtonFunction.cs.meta
 guid: cd961d6e5ff581547a02bafc3d33d1dd
 MonoImporter:
   externalObjects: {}
@@ -9,3 +10,6 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+========
+guid: 4b850f459d0834488a22e344be4a2dfe
+>>>>>>>> MonTrell:Assets/MonTrell Nelson/TextMesh Pro/Examples & Extras/Scripts/PauseMenu.cs.meta
