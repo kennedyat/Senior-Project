@@ -16,10 +16,8 @@ public class CursorController : MonoBehaviour
 
 
     private InputAction grab;
-    private bool grabbing = false;
-    private InputAction point;
-    public Transform selection = null;
-    public Vector2 previousMousePos = Vector2.zero;
+    private InputAction select;
+    private InputAction selection;
 
     private void Awake()
     {
@@ -31,20 +29,21 @@ public class CursorController : MonoBehaviour
     private void OnEnable()
     {
         grab = playerControls.Cashier.Grab;
-        grab.Enable();
+        selection = playerControls.Cashier.Selection;
 
-        point = playerControls.Cashier.Point;
-        point.Enable();
+        grab.Enable();
+        selection.Enable();
 
         grab.started += Grab;
         grab.canceled += Drop;
+        selection.started += Grab;
+        selection.canceled += Drop;
     }
 
 
     private void OnDisable()
     {
         grab.Disable();
-        point.Disable();
     }
 
     private void ChangeCursor(Texture2D cursorType)
@@ -56,38 +55,15 @@ public class CursorController : MonoBehaviour
     private void Grab(InputAction.CallbackContext context)
     {
         ChangeCursor(cursorClicked);
-        grabbing = true;
-        var ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            selection = hit.transform;
-        }
-        else
-        {
-            selection = null;
-        }
     }
 
     private void Drop(InputAction.CallbackContext context)
     {
         ChangeCursor(cursor);
-        grabbing = false;
-        previousMousePos = Vector2.zero;
-    }
-
-    private void DragObject(Transform transform, Vector3 translation)
-    {
-        transform.position += translation;
     }
 
     void Update()
     {
-        if (grabbing)
-        {
-            Vector3 translation = (Mouse.current.position.ReadValue() - previousMousePos) * Time.deltaTime;
-            DragObject(selection, translation);
-        }
-        previousMousePos = Mouse.current.position.ReadValue();
+        
     }
 }

@@ -15,10 +15,37 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Point",
-                    "type": "PassThrough",
-                    "id": "0a92be5d-28a8-4d35-8d65-337c0a791832",
-                    "expectedControlType": "Vector2",
+                    "name": "Selection",
+                    "type": "Button",
+                    "id": "162b85f6-2a78-4caa-adc6-8070564bb830",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "6416db99-c4ca-4b5b-aed8-4be57653bdde",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap(duration=0.3)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Inclusive",
+                    "type": "Button",
+                    "id": "06f668b1-8613-413c-8573-4a4f893b45ea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Group",
+                    "type": "Button",
+                    "id": "8285b245-fa33-49f1-bf51-60482abf271a",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -38,12 +65,45 @@
                 },
                 {
                     "name": "",
-                    "id": "78323503-a171-4161-9ad2-6994461d4288",
-                    "path": "<Mouse>/position",
+                    "id": "db934035-1b52-454d-a00b-2ba5db9e2d8b",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Selection",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e30a16ef-a442-464a-96df-2a055f90f626",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Tap(duration=0.3)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55c7fa0e-7306-4632-ba73-4ba987a18ea3",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Point",
+                    "groups": "",
+                    "action": "Inclusive",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04148071-7a7e-447f-aeb0-d52849093de7",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Group",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

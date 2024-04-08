@@ -37,10 +37,37 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Point"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""0a92be5d-28a8-4d35-8d65-337c0a791832"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""Selection"",
+                    ""type"": ""Button"",
+                    ""id"": ""162b85f6-2a78-4caa-adc6-8070564bb830"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""6416db99-c4ca-4b5b-aed8-4be57653bdde"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Tap(duration=0.3)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inclusive"",
+                    ""type"": ""Button"",
+                    ""id"": ""06f668b1-8613-413c-8573-4a4f893b45ea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Group"",
+                    ""type"": ""Button"",
+                    ""id"": ""8285b245-fa33-49f1-bf51-60482abf271a"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -60,12 +87,45 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""78323503-a171-4161-9ad2-6994461d4288"",
-                    ""path"": ""<Mouse>/position"",
+                    ""id"": ""db934035-1b52-454d-a00b-2ba5db9e2d8b"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Selection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e30a16ef-a442-464a-96df-2a055f90f626"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": ""Tap(duration=0.3)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55c7fa0e-7306-4632-ba73-4ba987a18ea3"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Point"",
+                    ""groups"": """",
+                    ""action"": ""Inclusive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04148071-7a7e-447f-aeb0-d52849093de7"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Group"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -138,7 +198,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // Cashier
         m_Cashier = asset.FindActionMap("Cashier", throwIfNotFound: true);
         m_Cashier_Grab = m_Cashier.FindAction("Grab", throwIfNotFound: true);
-        m_Cashier_Point = m_Cashier.FindAction("Point", throwIfNotFound: true);
+        m_Cashier_Selection = m_Cashier.FindAction("Selection", throwIfNotFound: true);
+        m_Cashier_Select = m_Cashier.FindAction("Select", throwIfNotFound: true);
+        m_Cashier_Inclusive = m_Cashier.FindAction("Inclusive", throwIfNotFound: true);
+        m_Cashier_Group = m_Cashier.FindAction("Group", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -201,13 +264,19 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Cashier;
     private List<ICashierActions> m_CashierActionsCallbackInterfaces = new List<ICashierActions>();
     private readonly InputAction m_Cashier_Grab;
-    private readonly InputAction m_Cashier_Point;
+    private readonly InputAction m_Cashier_Selection;
+    private readonly InputAction m_Cashier_Select;
+    private readonly InputAction m_Cashier_Inclusive;
+    private readonly InputAction m_Cashier_Group;
     public struct CashierActions
     {
         private @PlayerInputActions m_Wrapper;
         public CashierActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Grab => m_Wrapper.m_Cashier_Grab;
-        public InputAction @Point => m_Wrapper.m_Cashier_Point;
+        public InputAction @Selection => m_Wrapper.m_Cashier_Selection;
+        public InputAction @Select => m_Wrapper.m_Cashier_Select;
+        public InputAction @Inclusive => m_Wrapper.m_Cashier_Inclusive;
+        public InputAction @Group => m_Wrapper.m_Cashier_Group;
         public InputActionMap Get() { return m_Wrapper.m_Cashier; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -220,9 +289,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Grab.started += instance.OnGrab;
             @Grab.performed += instance.OnGrab;
             @Grab.canceled += instance.OnGrab;
-            @Point.started += instance.OnPoint;
-            @Point.performed += instance.OnPoint;
-            @Point.canceled += instance.OnPoint;
+            @Selection.started += instance.OnSelection;
+            @Selection.performed += instance.OnSelection;
+            @Selection.canceled += instance.OnSelection;
+            @Select.started += instance.OnSelect;
+            @Select.performed += instance.OnSelect;
+            @Select.canceled += instance.OnSelect;
+            @Inclusive.started += instance.OnInclusive;
+            @Inclusive.performed += instance.OnInclusive;
+            @Inclusive.canceled += instance.OnInclusive;
+            @Group.started += instance.OnGroup;
+            @Group.performed += instance.OnGroup;
+            @Group.canceled += instance.OnGroup;
         }
 
         private void UnregisterCallbacks(ICashierActions instance)
@@ -230,9 +308,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Grab.started -= instance.OnGrab;
             @Grab.performed -= instance.OnGrab;
             @Grab.canceled -= instance.OnGrab;
-            @Point.started -= instance.OnPoint;
-            @Point.performed -= instance.OnPoint;
-            @Point.canceled -= instance.OnPoint;
+            @Selection.started -= instance.OnSelection;
+            @Selection.performed -= instance.OnSelection;
+            @Selection.canceled -= instance.OnSelection;
+            @Select.started -= instance.OnSelect;
+            @Select.performed -= instance.OnSelect;
+            @Select.canceled -= instance.OnSelect;
+            @Inclusive.started -= instance.OnInclusive;
+            @Inclusive.performed -= instance.OnInclusive;
+            @Inclusive.canceled -= instance.OnInclusive;
+            @Group.started -= instance.OnGroup;
+            @Group.performed -= instance.OnGroup;
+            @Group.canceled -= instance.OnGroup;
         }
 
         public void RemoveCallbacks(ICashierActions instance)
@@ -298,6 +385,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface ICashierActions
     {
         void OnGrab(InputAction.CallbackContext context);
-        void OnPoint(InputAction.CallbackContext context);
+        void OnSelection(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
+        void OnInclusive(InputAction.CallbackContext context);
+        void OnGroup(InputAction.CallbackContext context);
     }
 }
