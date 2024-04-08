@@ -26,7 +26,6 @@ public class RegisterState : MonoBehaviour
         zLimitForward = initialPosition.z + .8f;
     }
     void Update(){
-        Debug.Log("Update");
         if(_mainState==true){
             transform.position = initialPosition;
            Drawer.transform.position = initialPosition;
