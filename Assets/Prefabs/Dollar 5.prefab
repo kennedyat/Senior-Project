@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.5066311, y: 0.49327978, z: -0.49327984, w: 0.50663114}
   m_LocalPosition: {x: 0.8569976, y: 0.31900054, z: -0.30400044}
-  m_LocalScale: {x: 1.5000005, y: 1.2100004, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7781931071824890847}
@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boundary: {fileID: 0}
   editView: 0
+  submitEvent: {fileID: 0}
 --- !u!65 &7631717008546542425
 BoxCollider:
   m_ObjectHideFlags: 0

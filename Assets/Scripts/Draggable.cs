@@ -73,10 +73,12 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Debug.Log(gameObject.GetComponentInParent<GroupValue>().GetValue());
-        if (gameObject.GetComponentInParent<GroupValue>().submittable)
-            submitEvent.Raise(this, gameObject.GetComponentInParent<GroupValue>().GetValue());
-        foreach (Transform child in transform.parent.transform)
-            child.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        if (transform.parent)
+        {
+            if (gameObject.GetComponentInParent<GroupValue>().submittable)
+                submitEvent.Raise(this, gameObject.GetComponentInParent<GroupValue>().GetValue());
+            foreach (Transform child in transform.parent.transform)
+                child.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
     }
 }
