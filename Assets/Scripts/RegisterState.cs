@@ -12,11 +12,12 @@ public class RegisterState : MonoBehaviour
     bool _editState=false;
     Vector3 mousePos;
     Vector3 initialPosition;
-    public GameObject Drawer;
-    public GameObject FollowTarget;
+    //public GameObject Drawer;
+    //public GameObject FollowTarget;
    
     public Animator _anim;
 
+    //Limit Drawer movement on the z axis
     float zLimitForward;
     float zLimitBackward;
 
@@ -28,18 +29,20 @@ public class RegisterState : MonoBehaviour
     void Update(){
         if(_mainState==true){
             transform.position = initialPosition;
-           Drawer.transform.position = initialPosition;
-            
+           //Drawer.transform.position = initialPosition;
         }
-        if (_anim.GetCurrentAnimatorStateInfo(0).IsName("Opening")&&_anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_anim.IsInTransition(0)){
+
+        //Call Follow 
+        //When Opening, make mainstate false
+       /* if (_anim.GetCurrentAnimatorStateInfo(0).IsName("Opening")&&_anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && !_anim.IsInTransition(0)){
            Debug.Log("Anim Ended");
            if(_mainState==true){
                 Follow();
                 _mainState=false;
-                
-                //_anim.SetBool("OpenState", true);
+                 //transform.Translate(Vector3.forward *1.03f);
+                _anim.SetBool("OpenState", true);
            }
-        } 
+        } */
 
 
     }
@@ -51,30 +54,26 @@ public class RegisterState : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
         if(_mainState==true){
-            Pull();
-            Debug.Log("Closed State");
+            _mainState=false;
+            Open();
+             _anim.SetBool("OpenState", true);
+            Debug.Log("Open State");
         }else{
             mousePos= Input.mousePosition - GetMousePos();
         }
     }
-    private void Pull(){
-
-
-         _anim.SetBool("OpenState", true);
+    /*private void Pull(){
+        _anim.SetBool("OpenState", true);
+    }*/
+    //Pull Object follows drawer through FollowTarget
+    // Drawer becomes parent to Pull Object
+    private void Open(){
         
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z +5f);
     }
 
-    private void Follow(){
-        transform.position = FollowTarget.transform.position;
-      
-        this.transform.parent = null;
-        Drawer.transform.parent = this.transform;
-      
-        
-    }
-
+    //On drag, clamp pull on z direction
     private void OnMouseDrag(){
         float zPos;
         if(_mainState == false){
@@ -85,10 +84,12 @@ public class RegisterState : MonoBehaviour
             // as seen by how many clones appear if you un-comment my line
             if(zPos<=zLimitBackward){
                 
-                // submissionView.Raise(); added line!
+                submissionView.Raise(); //added line!
+                Debug.Log("Closed Register!! Main State: " + _mainState);
                 _anim.SetBool("OpenState", false);
                 _mainState=true; 
-                 Drawer.transform.parent = null;
+                 //Drawer.transform.parent = null;
+                 //Drawer.transform.position = initialPosition;
             }
         }
        
