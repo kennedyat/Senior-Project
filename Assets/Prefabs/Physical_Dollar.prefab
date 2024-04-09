@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boundary: {fileID: 0}
   editView: 0
+  submitEvent: {fileID: 11400000, guid: d348dd856f7d7a14f803a98a2ac6cb88, type: 2}
 --- !u!54 &7382792265006584733
 Rigidbody:
   m_ObjectHideFlags: 0
