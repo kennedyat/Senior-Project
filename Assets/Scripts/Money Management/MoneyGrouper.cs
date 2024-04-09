@@ -20,7 +20,8 @@ public class MoneyGrouper : MonoBehaviour
     // The goal of this method is to stack the money and count its value
     public void onSubmissionViewEvent()
     {
-        Instantiate(grouper);
+        if (!GameObject.FindGameObjectWithTag("Grouper"))
+            Instantiate(grouper);
         groupValue = grouper.GetComponent<GroupValue>();
         foreach (GameObject currency in dollars)
         {

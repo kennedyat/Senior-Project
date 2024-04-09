@@ -73,6 +73,8 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (boundary == null)
+            Destroy(gameObject);
         if (transform.parent)
         {
             if (gameObject.GetComponentInParent<GroupValue>().submittable)
