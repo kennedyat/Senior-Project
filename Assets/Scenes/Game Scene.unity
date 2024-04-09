@@ -1039,7 +1039,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3615657596977825914, guid: d1259d9fb17d9da4eb899b9fd1cf2782, type: 3}
       propertyPath: value
-      value: 15.37
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4183982123696054602, guid: d1259d9fb17d9da4eb899b9fd1cf2782, type: 3}
       propertyPath: m_Name
@@ -1350,8 +1350,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7143793, y: 0.9132073, z: 1.4416506}
-  m_Center: {x: -0.13611996, y: 0.043396354, z: 0.22082531}
+  m_Size: {x: 1.7143793, y: 0.7899796, z: 1.4416506}
+  m_Center: {x: -0.13611996, y: 0.10501021, z: 0.22082531}
 --- !u!114 &450475656
 MonoBehaviour:
   m_ObjectHideFlags: 0
