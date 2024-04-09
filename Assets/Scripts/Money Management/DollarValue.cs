@@ -6,21 +6,21 @@ using UnityEngine;
 public class DollarValue : MonoBehaviour
 {
     public int value;
-    Renderer _mat;
+    //Renderer _mat;
 
     // Start is called before the first frame update
     void Start(){
-        _mat = GetComponent<Renderer>();
+      //  _mat = GetComponent<Renderer>();
 
     }
     
     public void AddValue(int assigned_Value){
         value = assigned_Value;
-         _mat = GetComponent<Renderer>();
-        GetMaterial();
+        // _mat = GetComponent<Renderer>();
+        //GetMaterial();
     }
 
-    public void GetMaterial(){
+  /*  public void GetMaterial(){
         switch(value){
             case 20:
                 _mat.material.color = new Color(0,0,255);
@@ -36,5 +36,5 @@ public class DollarValue : MonoBehaviour
                 break;
             
             }
-    }
+    }*/
 }

@@ -10,6 +10,7 @@ TagManager:
   - Parent
   - Bounds
   - Money
+  - Grouper
   layers:
   - Default
   - TransparentFX
