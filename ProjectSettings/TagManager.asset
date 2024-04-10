@@ -11,6 +11,7 @@ TagManager:
   - Bounds
   - Money
   - Grouper
+  - Event Manager
   layers:
   - Default
   - TransparentFX

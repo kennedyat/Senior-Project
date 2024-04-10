@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class EventManager : MonoBehaviour
     // This is basically the player's score
     public float revenue;
     public static AudioSource audioSource;
+    public string cameraView = "Submission";
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class EventManager : MonoBehaviour
         //scoreText.text = "Revenue: " + revenue.ToString();
     }
 
-    public void OnSubmissionEvent(Component sender, object data)
+    public void onSubmissionEvent(Component sender, object data)
     {
         if (data is float)
         {
@@ -35,6 +37,20 @@ public class EventManager : MonoBehaviour
         }
 
         Destroy(sender.transform.parent.gameObject);
+    }
+
+    public void onSubmissionViewEvent(Component sender, object data){
+        if (data is string)
+        {
+            cameraView = (string)data;
+        }
+    }
+
+    public void onEditViewEvent(Component sender, object data){
+        if (data is String)
+        {
+            cameraView = (string)data;
+        }
     }
 
 }

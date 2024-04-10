@@ -6,8 +6,6 @@ using UnityEngine;
 public class RegisterState : MonoBehaviour
 {
   
-    [Header("Events")]
-    public GameEvent submissionView;
     bool _mainState=true;
     bool _editState=false;
     Vector3 mousePos;
@@ -16,6 +14,10 @@ public class RegisterState : MonoBehaviour
     //public GameObject FollowTarget;
    
     public Animator _anim;
+
+    [Header("Events")]
+    public GameEvent submissionView;
+    public GameEvent editView;
 
     //Limit Drawer movement on the z axis
     float zLimitForward;
@@ -59,6 +61,7 @@ public class RegisterState : MonoBehaviour
             Open();
              _anim.SetBool("OpenState", true);
             Debug.Log("Open State");
+            editView.Raise(this, "Edit");
         }else{
             mousePos= Input.mousePosition - GetMousePos();
         }
@@ -80,11 +83,9 @@ public class RegisterState : MonoBehaviour
           
            zPos = Mathf.Clamp(Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos).z,zLimitBackward,zLimitForward);
            transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
-            // It seems that this function here calls a lot of times,
-            // as seen by how many clones appear if you un-comment my line
             if(zPos<=zLimitBackward){
                 
-                submissionView.Raise(); //added line!
+                submissionView.Raise(this, "Submission"); //added line!
                 Debug.Log("Closed Register!! Main State: " + _mainState);
                 _anim.SetBool("OpenState", false);
                 _mainState=true; 

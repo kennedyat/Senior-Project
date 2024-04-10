@@ -13,19 +13,26 @@ public class Draggable : MonoBehaviour
     private float zoomVal = 1.2f;
     // This variable shows whether the object will be zoomed in on when hovered over
     private bool zoom = false;
+    // The variable below shows the height that objects in edit view will be set to when grabbed
+    public float grabHeight = 0.57f;
     public BoxCorners boundary;
-    public bool editView = false;
+    private EventManager eventManager;
     [Header("Events")]
     public GameEvent submitEvent;
 
+    private void Awake()
+    {
+        eventManager = GameObject.FindGameObjectWithTag("Event Manager").GetComponent<EventManager>();
+    }
+
     private void Update()
     {
-        if (!editView && boundary != null)
+        if (eventManager.cameraView.Equals("Submission") && boundary)
         {
             transform.position = new Vector3 (
                 Mathf.Clamp(transform.position.x, boundary.bse.x, boundary.fnw.x),
-                Mathf.Clamp(transform.position.y, boundary.bse.y, boundary.fnw.y),
-                Mathf.Clamp(transform.position.z, boundary.bse.z, boundary.fnw.z));
+                Mathf.Clamp(transform.position.y, boundary.bse.y + 0.01f, boundary.fnw.y - 0.01f),
+                transform.position.z);
         }
     }
 
@@ -43,6 +50,8 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (eventManager.cameraView.Equals("Edit"))
+            transform.position = new Vector3(transform.position.x, grabHeight, transform.position.z);
         mousePos = Input.mousePosition - GetMousePos();
     }
 
