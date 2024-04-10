@@ -1313,7 +1313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99138b4e8d8ced46abd1ea2c9ab4a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dollarSpawn: {fileID: 1259626092304114359, guid: a30cf27d09de80b428260177945e9b9b, type: 3}
+  dollarSpawn: {fileID: 6053971130530389479, guid: 80f55ee575060f9458946336de270835, type: 3}
 --- !u!1 &438547258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,7 +1806,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 5000
-  field of view: 28.48
+  field of view: 26.58
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -1832,8 +1832,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532659487}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14087984, y: 0.017278338, z: -0.0024590727, w: 0.9898729}
-  m_LocalPosition: {x: 1.1395309, y: 1.9115336, z: -0.16726941}
+  m_LocalRotation: {x: 0, y: 0.9915584, z: -0.12966095, w: 0}
+  m_LocalPosition: {x: -0.055469096, y: 2.9305334, z: 5.7777305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2195,7 +2195,7 @@ MonoBehaviour:
   - {fileID: 811807981}
   m_Instructions:
   - m_FullHash: 5826193
-    m_VirtualCamera: {fileID: 475402428}
+    m_VirtualCamera: {fileID: 1314983746}
     m_ActivateAfter: 0
     m_MinDuration: 0
   - m_FullHash: 777965275
@@ -4991,8 +4991,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 7.4629884, z: 1}
-  m_Center: {x: 0, y: -3.2314734, z: 0}
+  m_Size: {x: 1, y: 7.626533, z: 1}
+  m_Center: {x: 0, y: -3.1497002, z: 0}
 --- !u!23 &1754794702
 MeshRenderer:
   m_ObjectHideFlags: 0

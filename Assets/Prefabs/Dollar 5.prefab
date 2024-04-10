@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae7468f5a0309f41966f038c874b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabHeight: 0.57
   boundary: {fileID: 0}
-  editView: 0
   submitEvent: {fileID: 0}
 --- !u!65 &7631717008546542425
 BoxCollider:
