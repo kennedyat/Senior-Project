@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7631717008546542425}
   - component: {fileID: 7884629778943362670}
   - component: {fileID: -7472499062295278900}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Dollar 5
   m_TagString: Money
   m_Icon: {fileID: 0}
@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae7468f5a0309f41966f038c874b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabHeight: 0.57
   boundary: {fileID: 0}
-  editView: 0
-  submitEvent: {fileID: 0}
+  submitEvent: {fileID: 11400000, guid: d348dd856f7d7a14f803a98a2ac6cb88, type: 2}
 --- !u!65 &7631717008546542425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ Rigidbody:
   m_GameObject: {fileID: 8810653898608613743}
   serializedVersion: 4
   m_Mass: 0.1
-  m_Drag: 2
+  m_Drag: 6
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -180,6 +180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dollar5
       objectReference: {fileID: 0}
+    - target: {fileID: 2858287933839818810, guid: 0e4f12f7d88e37e419e39d40f258907a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6524843967714326363, guid: fea7b81082f287c43b8c504a0d760cd3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

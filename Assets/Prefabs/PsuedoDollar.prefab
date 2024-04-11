@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PsuedoDollar
       objectReference: {fileID: 0}
+    - target: {fileID: 5656347534808206037, guid: a30cf27d09de80b428260177945e9b9b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6524843967714326363, guid: fea7b81082f287c43b8c504a0d760cd3, type: 3}
     - target: {fileID: 7361141502245637465, guid: a30cf27d09de80b428260177945e9b9b, type: 3}
       propertyPath: value
       value: 1
