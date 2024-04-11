@@ -11,6 +11,7 @@ public class selection_component : MonoBehaviour
     private GameObject child = null;
     Material originalMat;
     Material currentMat;
+    int matIndex;
 
     void Start()
     {
@@ -18,18 +19,20 @@ public class selection_component : MonoBehaviour
         if( this.transform.childCount>0){
             child = this.transform.GetChild(0).gameObject;
             face = getFaceObject(child);
+            matIndex =0;
         }else{
             Debug.Log("Coins");
             face = transform.gameObject;
+            matIndex = 1;
         }
        
 
 
         if (face != null){
             Debug.Log("Face");
-            originalMat = new Material(face.GetComponent<Renderer>().materials[0]) ;
-            currentMat = face.GetComponent<Renderer>().materials[0];
-            setFaceRender();
+            originalMat = new Material(face.GetComponent<Renderer>().material);
+            currentMat = face.GetComponent<Renderer>().materials[matIndex];
+            setFaceRender(matIndex);
         }
         
         transform.parent = GameObject.FindGameObjectWithTag("Parent").transform;
@@ -39,7 +42,7 @@ public class selection_component : MonoBehaviour
     //This returns the texture when deselected
     private void OnDestroy()
     {
-        face.GetComponent<Renderer>().materials[0] = originalMat;
+        face.GetComponent<Renderer>().material = originalMat;
         transform.parent.gameObject.GetComponent<GroupValue>().SubtractValue(gameObject.GetComponent<DollarValue>().value);
         transform.parent = null;
     }
@@ -55,8 +58,15 @@ public class selection_component : MonoBehaviour
         return found;
     }
 
-    private void setFaceRender(){
-         currentMat.color = Color.green;
-         currentMat.SetColor("_EmissionColor", Color.black);
-    }
+    private void setFaceRender(int coin){
+        if(coin ==0){
+            currentMat.color = Color.green;
+            currentMat.SetColor("_EmissionColor", Color.black);
+        }else{
+            currentMat.color = Color.grey;
+            currentMat.SetColor("_EmissionColor", Color.black);
+
+            }
+        }
+         
 }
