@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
     // This is basically the player's score
     public float revenue;
     public float playTime = 60f;
+    public float applePrice;
     public static AudioSource audioSource;
     public string cameraView = "Submission";
 
@@ -23,6 +24,7 @@ public class EventManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         //gameOverSound = Sounds.Load<AudioClip>("Game Over");
+        MarketShift();
     }
 
     void Update()
@@ -76,6 +78,18 @@ public class EventManager : MonoBehaviour
         {
             cameraView = (string)data;
         }
+    }
+
+    public void MarketShift()
+    {
+        StartCoroutine(NewPrices());
+    }
+
+    private IEnumerator NewPrices()
+    {
+        applePrice = Mathf.Round(UnityEngine.Random.Range(2.0f,4.0f) * 100) / 100.0f;
+        yield return new WaitForSeconds(30f);
+        MarketShift();
     }
 
 }

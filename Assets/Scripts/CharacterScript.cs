@@ -6,7 +6,9 @@ public class CharacterScript : MonoBehaviour
 {
     private float rotateSpeed = 0;
     private float maxSpeed = 500;
-    private  float yaxis=0;
+    private float yaxis=0;
+
+    private EventManager eventManager;
 
     private bool spin = false;
     Rigidbody rb;
@@ -14,6 +16,7 @@ public class CharacterScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        eventManager = GameObject.FindGameObjectWithTag("Event Manager").GetComponent<EventManager>();
     }
 
     // Update is called once per frame
@@ -47,5 +50,9 @@ public class CharacterScript : MonoBehaviour
         StartCoroutine(Spin());
     }
 
+    /*private float GenerateOrder();
+    {
+
+    }*/
    
 }
