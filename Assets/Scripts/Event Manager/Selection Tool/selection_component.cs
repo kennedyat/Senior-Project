@@ -44,7 +44,6 @@ public class selection_component : MonoBehaviour
     {
         face.GetComponent<Renderer>().material = originalMat;
         transform.parent.gameObject.GetComponent<GroupValue>().SubtractValue(gameObject.GetComponent<DollarValue>().value);
-        transform.parent = null;
     }
 
     private GameObject getFaceObject(GameObject child){
