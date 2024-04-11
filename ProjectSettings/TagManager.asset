@@ -15,6 +15,7 @@ TagManager:
   - bag
   - Produce
   - Character
+  - Dollar Spawner
   layers:
   - Default
   - TransparentFX

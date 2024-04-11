@@ -81,11 +81,18 @@ public class MoneyGrouper : MonoBehaviour
         }
     }
 
-    public void GeneratePayment(float orderValue){
-        GameObject temp;
-        for (int i = 0; this.orderValue < orderValue; i++)
+    public void GeneratePayment(float orderValue)
+    {
+        int temp;
+        DollarValue dollarValue;
+        while(this.orderValue < orderValue)
         {
-            
+            temp = Random.Range(0,4);
+            if (orderValue - this.orderValue > 20 && temp != 3)
+                temp++;
+            dollarValue = dollars[temp].GetComponent<DollarValue>();
+            Add("Submission", dollarValue);
+            this.orderValue += dollarValue.value;
         }
         
         /*//Add value to list

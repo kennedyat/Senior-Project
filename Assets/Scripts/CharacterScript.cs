@@ -8,6 +8,8 @@ public class CharacterScript : MonoBehaviour
     private float maxSpeed = 500;
     private float yaxis=0;
 
+    public int appleAmount;
+
     private EventManager eventManager;
 
     private bool spin = false;
@@ -17,6 +19,7 @@ public class CharacterScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         eventManager = GameObject.FindGameObjectWithTag("Event Manager").GetComponent<EventManager>();
+        GenerateOrder();
     }
 
     // Update is called once per frame
@@ -38,6 +41,17 @@ public class CharacterScript : MonoBehaviour
         yaxis*=.98f;
    }
 
+   public void OnSubmissionEvent()
+    {
+        StartCoroutine(Spin());
+    }
+
+    private float GenerateOrder()
+    {
+        appleAmount = Random.Range(1,13);
+        return appleAmount * eventManager.applePrice;
+    }
+
    private IEnumerator Spin()
     {
         spin = true;
@@ -45,14 +59,6 @@ public class CharacterScript : MonoBehaviour
         spin = false;
     }
 
-    public void OnSubmissionEvent()
-    {
-        StartCoroutine(Spin());
-    }
-
-    /*private float GenerateOrder();
-    {
-
-    }*/
+    
    
 }
