@@ -31,10 +31,10 @@ Material:
     m_Floats:
     - _Glossiness: 102.6
     - _RimAmount: 0.202
-    - _RimThreshold: 0.593
+    - _RimThreshold: 0.293
     m_Colors:
     - _AmbientColor: {r: 0.990566, g: 0.35978103, b: 0.35978103, a: 1}
-    - _Color: {r: 0.9716981, g: 0.44612548, b: 0.65230596, a: 1}
+    - _Color: {r: 0.64779866, g: 1, b: 0.95883363, a: 1}
     - _RimColor: {r: 0.40120587, g: 0.39466894, b: 0.46226418, a: 1}
     - _SpecularColor: {r: 0.8584906, g: 0.21384017, b: 0.1579299, a: 1}
   m_BuildTextureStacks: []
