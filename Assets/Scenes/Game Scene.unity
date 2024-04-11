@@ -7152,7 +7152,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dollar 1 New
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7426,7 +7427,6 @@ SceneRoots:
   - {fileID: 346078212}
   - {fileID: 1922303497}
   - {fileID: 123284572}
-  - {fileID: 237228167}
   - {fileID: 2536847442154374501}
   - {fileID: 330788369}
   - {fileID: 1991604280}

@@ -91,6 +91,7 @@ public class global_selection : MonoBehaviour
 
                 if(Physics.Raycast(ray,out hit, 50000.0f, 1 << 3))
                 {
+                    Debug.Log("Selected!");
                     if (includes) //inclusive select
                     {
                         selected_table.addSelected(hit.transform.gameObject);

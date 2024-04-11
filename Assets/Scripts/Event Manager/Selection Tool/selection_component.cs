@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class selection_component : MonoBehaviour
 {
-    // This is where the outline texture will need to be added
+    [SerializeField]
+    private Material outliner;
+
     void Start()
     {
-        GetComponent<Renderer>().material.color = Color.green;
+        GetComponent<Renderer>().material = outliner;
         transform.parent = GameObject.FindGameObjectWithTag("Parent").transform;
         transform.parent.gameObject.GetComponent<GroupValue>().AddValue(gameObject.GetComponent<DollarValue>().value);
     }
@@ -15,7 +17,7 @@ public class selection_component : MonoBehaviour
     //This returns the texture when deselected
     private void OnDestroy()
     {
-        GetComponent<Renderer>().material.color = Color.white;
+        GetComponent<Renderer>().material = null;
         transform.parent.gameObject.GetComponent<GroupValue>().SubtractValue(gameObject.GetComponent<DollarValue>().value);
         transform.parent = null;
     }
