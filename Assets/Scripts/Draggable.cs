@@ -50,7 +50,14 @@ public class Draggable : MonoBehaviour
     private void OnMouseDown()
     {
         if (eventManager.cameraView.Equals("Edit"))
+        {
+            if (!boundary)
+            {
+                Instantiate(gameObject, transform.position, transform.rotation, transform.parent);
+                transform.parent = null;
+            }
             transform.position = new Vector3(transform.position.x, grabHeight, transform.position.z);
+        }
         mousePos = Input.mousePosition - GetMousePos();
     }
 
