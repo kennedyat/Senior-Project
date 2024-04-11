@@ -13,6 +13,7 @@ public class Draggable : MonoBehaviour
     // This variable shows whether the object will be zoomed in on when hovered over
     private bool zoom = false;
     // The variable below shows the height that objects in edit view will be set to when grabbed
+    private bool listed = false; // If it has been added to the allMoney list
     public float grabHeight = 0.57f;
     public BoxCorners boundary;
     private EventManager eventManager;
@@ -90,6 +91,11 @@ public class Draggable : MonoBehaviour
     {
         if (boundary == null)
             Destroy(gameObject);
+        else if (!listed)
+        {
+            eventManager.GetComponent<MoneyGrouper>().Add(gameObject.GetComponent<DollarValue>());
+            listed = true;
+        }
         if (transform.parent)
         {
             if (gameObject.GetComponentInParent<GroupValue>().submittable)
@@ -97,5 +103,11 @@ public class Draggable : MonoBehaviour
             foreach (Transform child in transform.parent.transform)
                 child.gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (listed)
+            eventManager.GetComponent<MoneyGrouper>().allMoney.Remove(gameObject);
     }
 }

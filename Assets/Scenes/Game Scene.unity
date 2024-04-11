@@ -3131,7 +3131,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7593ef0296f1f4ab6bae9118302508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dollars: []
+  allMoney: []
+  twentyDollar: {fileID: 0}
+  tenDollar: {fileID: 0}
+  fiveDollar: {fileID: 8810653898608613743, guid: 8db73510d14412342b95cbc38474fa7a, type: 3}
+  oneDollar: {fileID: 6053971130530389479, guid: 80f55ee575060f9458946336de270835, type: 3}
   grouper: {fileID: 4183982123696054602, guid: d1259d9fb17d9da4eb899b9fd1cf2782, type: 3}
 --- !u!82 &1088261719
 AudioSource:

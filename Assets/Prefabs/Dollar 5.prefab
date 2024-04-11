@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabHeight: 0.57
   boundary: {fileID: 0}
-  submitEvent: {fileID: 0}
+  submitEvent: {fileID: 11400000, guid: d348dd856f7d7a14f803a98a2ac6cb88, type: 2}
 --- !u!65 &7631717008546542425
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6987375146332424625}
   - component: {fileID: 1916897167786079788}
   - component: {fileID: 4984327408911265355}
+  - component: {fileID: 2636367246673627982}
   m_Layer: 0
   m_Name: Dollar 1 New
   m_TagString: Money
@@ -97,7 +98,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabHeight: 0.57
   boundary: {fileID: 0}
-  submitEvent: {fileID: 0}
+  submitEvent: {fileID: 11400000, guid: d348dd856f7d7a14f803a98a2ac6cb88, type: 2}
+--- !u!114 &2636367246673627982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053971130530389479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611632741c3204c449e522f30377be92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
 --- !u!1001 &1814744285131870343
 PrefabInstance:
   m_ObjectHideFlags: 0
