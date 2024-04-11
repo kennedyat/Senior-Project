@@ -35,6 +35,8 @@ public class EventManager : MonoBehaviour
         }
 
         Destroy(sender.transform.parent.gameObject);
+
+        GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterScript>().OnSubmissionEvent();
     }
 
 }

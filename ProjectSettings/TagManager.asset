@@ -12,6 +12,7 @@ TagManager:
   - Money
   - bag
   - Produce
+  - Character
   layers:
   - Default
   - TransparentFX
