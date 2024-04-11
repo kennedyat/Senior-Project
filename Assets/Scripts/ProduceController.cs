@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ProduceController : MonoBehaviour
 {
     Vector3 mousePos;
-    public GameObject item;
-    private GameObject currentItem;
+    //public GameObject item;
+    public TMP_Text textCounter;
+    int counter=0;
+    //private GameObject currentItem;
+    bool _produceState=false;
+    public Animator _anim;
+    
 
+void Awake(){
+     
+    textCounter.text = "0";
+}
     private Vector3 GetMousePos()
     {
         
@@ -17,16 +27,31 @@ public class ProduceController : MonoBehaviour
 
       private void OnMouseDown()
     {
-        mousePos = Input.mousePosition - GetMousePos();
-        currentItem =Instantiate(item, this.transform.position, transform.rotation);
+        Debug.Log("OnMouseDown");
+        if(this.tag == "bag" && _produceState == false){
+            Debug.Log("Bag");
+            _anim.SetBool("ProduceState", true);
+            _produceState = true;
+
+
+        }
+        else if(this.tag == "bag" && _produceState == true){
+            _anim.SetBool("ProduceState", false);
+            _produceState = false;
+
+        }
+        if(this.tag == "Produce"){
+            mousePos = Input.mousePosition - GetMousePos();
+            //currentItem =Instantiate(item, this.gameObject.transform.position, transform.rotation);
+            counter++;
+            textCounter.text = counter.ToString();
+        }
     }
 
-    private void OnMouseDrag()
+        
+
+    /*private void OnMouseDrag()
     {
-
-        if (transform.parent == null)
-            currentItem.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
-        else
-            currentItem.transform.parent.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
-    }
+        currentItem.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePos);
+    }*/
 }
