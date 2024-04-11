@@ -12,6 +12,8 @@ TagManager:
   - Money
   - Grouper
   - Event Manager
+  - bag
+  - Produce
   layers:
   - Default
   - TransparentFX
