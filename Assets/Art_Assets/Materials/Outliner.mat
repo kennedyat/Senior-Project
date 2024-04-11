@@ -29,9 +29,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Angle: 89
-    - _FirstOutlineWidth: 0.143
-    - _SecondOutlineWidth: 0.162
+    - _Angle: 42
+    - _FirstOutlineWidth: 0.14
+    - _SecondOutlineWidth: 0.6
     m_Colors:
     - _Color: {r: 0, g: 0.65906125, b: 0.9150943, a: 1}
     - _FirstOutlineColor: {r: 1, g: 0, b: 0, a: 0.5}
