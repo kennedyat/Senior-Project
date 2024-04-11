@@ -39,6 +39,11 @@ public class MoneyGrouper : MonoBehaviour
         }
     }
 
+    public void onSubmissionEvent()
+    {
+        allMoney.Clear();
+    }
+
     public void getDollarGrid(int twenty, int ten, int five, int one){
         //Add value to list
         for(int i = 0; i<twenty; i++)

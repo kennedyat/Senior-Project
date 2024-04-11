@@ -104,10 +104,4 @@ public class Draggable : MonoBehaviour
                 child.gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
     }
-
-    private void OnDestroy()
-    {
-        if (listed)
-            eventManager.GetComponent<MoneyGrouper>().allMoney.Remove(gameObject);
-    }
 }
