@@ -21,4 +21,10 @@ public class BoxCorners : MonoBehaviour
         if (other.CompareTag("Money"))
             other.gameObject.GetComponent<Draggable>().boundary = gameObject.GetComponent<BoxCorners>();
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Money"))
+            other.gameObject.GetComponent<Draggable>().boundary = null;
+    }
 }

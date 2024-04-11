@@ -10,6 +10,8 @@ TagManager:
   - Parent
   - Bounds
   - Money
+  - Grouper
+  - Event Manager
   - bag
   - Produce
   - Character

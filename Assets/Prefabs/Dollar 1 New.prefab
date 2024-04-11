@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6987375146332424625}
   - component: {fileID: 1916897167786079788}
   - component: {fileID: 4984327408911265355}
-  m_Layer: 0
+  - component: {fileID: 2636367246673627982}
+  m_Layer: 3
   m_Name: Dollar 1 New
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,8 +55,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.45902723, y: 0.18713464, z: 0.026039949}
-  m_Center: {x: -0.09788789, y: 0.050417904, z: -0.0011228994}
+  m_Size: {x: 0.4590272, y: 0.18713464, z: 0.011221707}
+  m_Center: {x: -0.09788788, y: 0.050417904, z: -0.00035777688}
 --- !u!54 &1916897167786079788
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -65,7 +66,7 @@ Rigidbody:
   m_GameObject: {fileID: 6053971130530389479}
   serializedVersion: 4
   m_Mass: 0.1
-  m_Drag: 2
+  m_Drag: 6
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -95,9 +96,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae7468f5a0309f41966f038c874b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabHeight: 0.57
   boundary: {fileID: 0}
-  editView: 0
-  submitEvent: {fileID: 0}
+  submitEvent: {fileID: 11400000, guid: d348dd856f7d7a14f803a98a2ac6cb88, type: 2}
+--- !u!114 &2636367246673627982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053971130530389479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611632741c3204c449e522f30377be92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
 --- !u!1001 &1814744285131870343
 PrefabInstance:
   m_ObjectHideFlags: 0

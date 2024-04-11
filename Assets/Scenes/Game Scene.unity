@@ -924,12 +924,6 @@ PrefabInstance:
       addedObject: {fileID: 63196491}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b9289c8125f7e3b4ba54ed2637209627, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 438055791}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b9289c8125f7e3b4ba54ed2637209627, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 920281128}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b9289c8125f7e3b4ba54ed2637209627, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1614727323}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b9289c8125f7e3b4ba54ed2637209627, type: 3}
       insertIndex: -1
@@ -2264,55 +2258,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1891828934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &438055790
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469935089}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.21115915, y: 0.23004267, z: 0.5894027}
-  m_Center: {x: 0.0046624863, y: -0.012738024, z: -0.018688211}
---- !u!4 &438055791
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469935089}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.50352055, y: 0.49645188, z: 0.4962787, w: 0.5036963}
-  m_LocalPosition: {x: -0.008541956, y: -0.0070158863, z: 0.0027649433}
-  m_LocalScale: {x: 0.015900569, y: 0.08295541, z: 0.015900563}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1427723974}
-  m_LocalEulerAnglesHint: {x: 0, y: -3.18, z: 0}
---- !u!114 &438055792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469935089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f99138b4e8d8ced46abd1ea2c9ab4a6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dollarSpawn: {fileID: 1259626092304114359, guid: a30cf27d09de80b428260177945e9b9b, type: 3}
 --- !u!1 &438547258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2410,24 +2355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d968011912a935b4186ff379d09f0570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &469935089
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 438055791}
-  - component: {fileID: 438055790}
-  - component: {fileID: 438055792}
-  m_Layer: 0
-  m_Name: 1
-  m_TagString: DollarHolder
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &475402427
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,8 +3091,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3495753, y: 1.3562427, z: 1.1404049}
-  m_Center: {x: -0.040798604, y: 0.17812133, z: 0.046900958}
+  m_Size: {x: 1.3495753, y: 1.3590379, z: 1.1404049}
+  m_Center: {x: -0.040798604, y: 0.17672372, z: 0.046900988}
 --- !u!4 &605024311
 Transform:
   m_ObjectHideFlags: 0
@@ -3917,73 +3844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &920281127
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 920281128}
-  - component: {fileID: 920281130}
-  - component: {fileID: 920281129}
-  m_Layer: 0
-  m_Name: 5
-  m_TagString: DollarHolder
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &920281128
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920281127}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.50352055, y: 0.49645188, z: 0.4962787, w: 0.5036963}
-  m_LocalPosition: {x: -0.00848, y: -0.00277, z: 0.00276}
-  m_LocalScale: {x: 0.015900569, y: 0.08295541, z: 0.015900563}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1427723974}
-  m_LocalEulerAnglesHint: {x: 0, y: -3.18, z: 0}
---- !u!114 &920281129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920281127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f99138b4e8d8ced46abd1ea2c9ab4a6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dollarSpawn: {fileID: 8810653898608613743, guid: 8db73510d14412342b95cbc38474fa7a, type: 3}
---- !u!65 &920281130
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920281127}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.19230074, y: 0.23004267, z: 0.5894027}
-  m_Center: {x: 0.04354897, y: -0.01274899, z: -0.018688213}
 --- !u!1 &952319094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4530,9 +4390,10 @@ GameObject:
   - component: {fileID: 1088261722}
   - component: {fileID: 1088261724}
   - component: {fileID: 1088261725}
+  - component: {fileID: 1088261726}
   m_Layer: 0
   m_Name: Event Manager
-  m_TagString: Untagged
+  m_TagString: Event Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4606,11 +4467,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee7593ef0296f1f4ab6bae9118302508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dollars: []
+  allMoney: []
   twentyDollar: {fileID: 0}
   tenDollar: {fileID: 0}
-  fiveDollar: {fileID: 0}
-  oneDollar: {fileID: 0}
+  fiveDollar: {fileID: 8810653898608613743, guid: 8db73510d14412342b95cbc38474fa7a, type: 3}
+  oneDollar: {fileID: 6053971130530389479, guid: 80f55ee575060f9458946336de270835, type: 3}
   grouper: {fileID: 4183982123696054602, guid: d1259d9fb17d9da4eb899b9fd1cf2782, type: 3}
 --- !u!82 &1088261719
 AudioSource:
@@ -4721,6 +4582,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   revenue: 0
+  playTime: 60
+  cameraView: Submission
+  gameOver: {fileID: 11400000, guid: 958ab0fe78a8337428bb61ba0cfa0111, type: 2}
 --- !u!114 &1088261721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4835,6 +4699,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1088261720}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: onSubmissionViewEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1088261725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4852,8 +4728,36 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1088261720}
-        m_TargetAssemblyTypeName: EventSystem, Assembly-CSharp
-        m_MethodName: OnSubmissionEvent
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: onSubmissionEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1088261726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088261711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e45f2d816b501040ade238864228c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c8fe7afda51cd1140a2b8ec3fd2a0d1a, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1088261720}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: onEditViewEvent
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5200,37 +5104,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &1166514626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1166514627}
-  m_Layer: 0
-  m_Name: 
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1166514627
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166514626}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1240157980
 GameObject:
   m_ObjectHideFlags: 0
@@ -7229,8 +7102,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 7.4629884, z: 1}
-  m_Center: {x: 0, y: -3.2314734, z: 0}
+  m_Size: {x: 1, y: 7.626533, z: 1}
+  m_Center: {x: 0, y: -3.1497002, z: 0}
 --- !u!23 &1754794702
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7924,8 +7797,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5b35657fc3e1c41a15966e9867b083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  submissionView: {fileID: 11400000, guid: 05d29ec798965d84ebe3868f0672cdfb, type: 2}
   _anim: {fileID: 1427723975}
+  submissionView: {fileID: 11400000, guid: 05d29ec798965d84ebe3868f0672cdfb, type: 2}
+  editView: {fileID: 11400000, guid: c8fe7afda51cd1140a2b8ec3fd2a0d1a, type: 2}
 --- !u!65 &1892135262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10850,8 +10724,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1166514627}
-  - {fileID: 1689500294}
   - {fileID: 532659490}
   - {fileID: 753916530}
   - {fileID: 1240157985}
@@ -10885,7 +10757,6 @@ SceneRoots:
   - {fileID: 346078212}
   - {fileID: 1922303497}
   - {fileID: 123284572}
-  - {fileID: 237228167}
   - {fileID: 2536847442154374501}
   - {fileID: 330788369}
   - {fileID: 1991604280}

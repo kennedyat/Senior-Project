@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 3909929719901335614}
   - component: {fileID: 654751459264472679}
   - component: {fileID: 1270054930533913072}
+  - component: {fileID: 5129653487685594959}
   - component: {fileID: 5421421915033814559}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Dollar 20
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,6 +76,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 20
+--- !u!114 &5129653487685594959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2944892977755395379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae7468f5a0309f41966f038c874b503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabHeight: 0.57
+  boundary: {fileID: 0}
+  submitEvent: {fileID: 0}
 --- !u!65 &5421421915033814559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94,8 +110,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.46912315, y: 0.18770224, z: 0.0100435475}
-  m_Center: {x: -0.0035325824, y: 0.015369972, z: 0.0064926306}
+  m_Size: {x: 0.46634674, y: 0.18257798, z: 0.012018773}
+  m_Center: {x: -0.014031218, y: -0.0057332576, z: -0.006478823}
 --- !u!1001 &8871271677554560330
 PrefabInstance:
   m_ObjectHideFlags: 0
