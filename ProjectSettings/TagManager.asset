@@ -16,6 +16,8 @@ TagManager:
   - Produce
   - Character
   - Dollar Spawner
+  - Undefined
+  - Face
   layers:
   - Default
   - TransparentFX

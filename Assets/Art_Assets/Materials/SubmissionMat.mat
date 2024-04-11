@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Handle
+  m_Name: SubmissionMat
   m_Shader: {fileID: 4800000, guid: ee0d49cc8a7c31a4f8a60b4265c63c39, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -30,11 +30,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _Glossiness: 102.6
-    - _RimAmount: 0.161
-    - _RimThreshold: 0.336
+    - _RimAmount: 0.202
+    - _RimThreshold: 0.593
     m_Colors:
-    - _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 0.50628924, b: 0.53179413, a: 1}
+    - _AmbientColor: {r: 0.990566, g: 0.35978103, b: 0.35978103, a: 1}
+    - _Color: {r: 1, g: 0.64779866, b: 0.7844738, a: 1}
     - _RimColor: {r: 0.40120587, g: 0.39466894, b: 0.46226418, a: 1}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 0.8584906, g: 0.21384017, b: 0.1579299, a: 1}
   m_BuildTextureStacks: []
