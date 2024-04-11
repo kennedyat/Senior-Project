@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DollarValue : MonoBehaviour
 {
-    public int value;
+    public float value;
     //Renderer _mat;
 
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class DollarValue : MonoBehaviour
 
     }
     
-    public void AddValue(int assigned_Value){
+    public void AddValue(float assigned_Value){
         value = assigned_Value;
         // _mat = GetComponent<Renderer>();
         //GetMaterial();
