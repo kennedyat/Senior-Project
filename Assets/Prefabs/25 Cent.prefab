@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 6116345136322435780}
   - component: {fileID: 5418777438406096877}
   - component: {fileID: 562115736893398096}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: 25 Cent
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae7468f5a0309f41966f038c874b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabHeight: 0.57
   boundary: {fileID: 0}
-  editView: 0
   submitEvent: {fileID: 0}
 --- !u!114 &5418777438406096877
 MonoBehaviour:

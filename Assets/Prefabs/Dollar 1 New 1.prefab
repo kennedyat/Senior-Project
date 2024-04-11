@@ -201,8 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae7468f5a0309f41966f038c874b503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabHeight: 0.57
   boundary: {fileID: 0}
-  editView: 0
   submitEvent: {fileID: 0}
 --- !u!1001 &7962449530677314739
 PrefabInstance:
@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4ae83149a1fb84e49b1bbc324eaaa30d, type: 2}
+    - target: {fileID: -3310466799531732742, guid: fea7b81082f287c43b8c504a0d760cd3, type: 3}
+      propertyPath: m_TagString
+      value: Face
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fea7b81082f287c43b8c504a0d760cd3, type: 3}
       propertyPath: m_Name
       value: dollar1

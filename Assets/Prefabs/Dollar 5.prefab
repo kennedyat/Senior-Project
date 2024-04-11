@@ -176,6 +176,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3310466799531732742, guid: 0e4f12f7d88e37e419e39d40f258907a, type: 3}
+      propertyPath: m_TagString
+      value: Face
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e4f12f7d88e37e419e39d40f258907a, type: 3}
       propertyPath: m_Name
       value: dollar5

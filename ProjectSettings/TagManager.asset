@@ -15,6 +15,8 @@ TagManager:
   - bag
   - Produce
   - Character
+  - Undefined
+  - Face
   layers:
   - Default
   - TransparentFX

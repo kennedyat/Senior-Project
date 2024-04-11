@@ -180,6 +180,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4ae83149a1fb84e49b1bbc324eaaa30d, type: 2}
+    - target: {fileID: -3310466799531732742, guid: fea7b81082f287c43b8c504a0d760cd3, type: 3}
+      propertyPath: m_TagString
+      value: Face
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fea7b81082f287c43b8c504a0d760cd3, type: 3}
       propertyPath: m_Name
       value: dollar1
