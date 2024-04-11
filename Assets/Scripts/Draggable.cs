@@ -2,9 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations;
 
 public class Draggable : MonoBehaviour
 {
@@ -59,10 +57,7 @@ public class Draggable : MonoBehaviour
                 Instantiate(gameObject, transform.position, transform.rotation, transform.parent);
                 transform.parent = null;
             }
-            if (transform.parent)
-                transform.parent.position += new Vector3 (0, grabHeight, 0);
-            else
-                transform.position = new Vector3(transform.position.x, grabHeight, transform.position.z);
+            transform.position = new Vector3(transform.position.x, grabHeight, transform.position.z);
         }
         mousePos = Input.mousePosition - GetMousePos();
     }
@@ -95,12 +90,7 @@ public class Draggable : MonoBehaviour
     private void OnMouseUp()
     {
         if (boundary == null)
-            if (!transform.parent)
-                Destroy(gameObject);
-            else
-                foreach (Transform child in transform.parent)
-                    if (child.gameObject.GetComponent<Draggable>().boundary == null)
-                        Destroy(child.gameObject);
+            Destroy(gameObject);
         else if (!listed)
         {
             //eventManager.GetComponent<MoneyGrouper>().Add(gameObject.GetComponent<DollarValue>());
