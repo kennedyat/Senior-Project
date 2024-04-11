@@ -93,7 +93,7 @@ public class Draggable : MonoBehaviour
             Destroy(gameObject);
         else if (!listed)
         {
-            eventManager.GetComponent<MoneyGrouper>().Add(gameObject.GetComponent<DollarValue>());
+            //eventManager.GetComponent<MoneyGrouper>().Add(gameObject.GetComponent<DollarValue>());
             listed = true;
         }
         if (transform.parent)

@@ -14,6 +14,8 @@ TagManager:
   - Event Manager
   - bag
   - Produce
+  - Character
+  - Dollar Spawner
   layers:
   - Default
   - TransparentFX

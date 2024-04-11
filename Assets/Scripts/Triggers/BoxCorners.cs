@@ -9,8 +9,10 @@ public class BoxCorners : MonoBehaviour
     public Vector3 fnw;
     // The back southeast corner of the box collider
     public Vector3 bse;
+    private MoneyGrouper moneyGrouper;
     void Awake()
     {
+        moneyGrouper = GameObject.FindGameObjectWithTag("Event Manager").GetComponent<MoneyGrouper>();
         BoxCollider b = gameObject.GetComponent<BoxCollider>();
         bse = transform.TransformPoint(b.center + new Vector3(-b.size.x, -b.size.y, -b.size.z) * 0.5f);
         fnw = transform.TransformPoint(b.center + new Vector3(b.size.x, b.size.y, b.size.z) * 0.5f);
@@ -19,12 +21,24 @@ public class BoxCorners : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Money"))
+        {
+            /*if (other.gameObject.GetComponent<DollarValue>().value >= 1)
+                moneyGrouper.dollars++;
+            else
+                moneyGrouper.coins++;*/
             other.gameObject.GetComponent<Draggable>().boundary = gameObject.GetComponent<BoxCorners>();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Money"))
+        {
+            /*if (other.gameObject.GetComponent<DollarValue>().value >= 1)
+                moneyGrouper.dollars--;
+            else
+                moneyGrouper.coins--;*/
             other.gameObject.GetComponent<Draggable>().boundary = null;
+        }
     }
 }
