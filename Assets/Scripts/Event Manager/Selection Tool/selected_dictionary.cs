@@ -20,6 +20,7 @@ public class selected_dictionary : MonoBehaviour
 
     public void deselect(int id)
     {
+        selectedTable[id].GetComponent<selection_component>().gameObject.transform.parent = null;
         Destroy(selectedTable[id].GetComponent<selection_component>());
         selectedTable.Remove(id);
     }
@@ -30,6 +31,7 @@ public class selected_dictionary : MonoBehaviour
         {
             if(pair.Value != null)
             {
+                pair.Value.GetComponent<selection_component>().gameObject.transform.parent = null;
                 Destroy(selectedTable[pair.Key].GetComponent<selection_component>());
             }
         }
