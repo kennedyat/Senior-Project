@@ -6,6 +6,7 @@ using TMPro;
 
 public class CharacterScript : MonoBehaviour
 {
+
     private float rotateSpeed = 0;
     private float maxSpeed = 500;
     private float yaxis=0;
@@ -13,8 +14,10 @@ public class CharacterScript : MonoBehaviour
     public int appleAmount;
     public TMP_Text itemOrderAmount;
     public TMP_Text itemOrderPrice;
+    public float solution;
+    private bool ready2order = true;
 
-    private EventManager eventManager;
+    private GameObject eventManager;
 
     private bool spin = false;
     Rigidbody rb;
@@ -22,8 +25,7 @@ public class CharacterScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        eventManager = GameObject.FindGameObjectWithTag("Event Manager").GetComponent<EventManager>();
-        GenerateOrder();
+        eventManager = GameObject.FindGameObjectWithTag("Event Manager");
     }
 
     // Update is called once per frame
@@ -39,23 +41,39 @@ public class CharacterScript : MonoBehaviour
         }
          transform.Rotate(0f, yaxis*Time.deltaTime, 0.0f);
         //transform.rotation = Quaternion.Slerp(transform.rotation,target, Time.deltaTime*5f);
+
+        if(Input.GetMouseButtonDown(0)){
+            if (ready2order)
+            {
+                solution = GenerateSolution();
+                ready2order = false;
+            }
+        }
        
     }
    void FixedUpdate(){
         yaxis*=.98f;
    }
-
    public void OnSubmissionEvent()
     {
         StartCoroutine(Spin());
+        ready2order = true;
     }
 
     private float GenerateOrder()
     {
         appleAmount = Random.Range(1,13);
         itemOrderAmount.text = appleAmount.ToString() + "X";
-        itemOrderPrice.text = eventManager.applePrice.ToString("0.00");
-        return appleAmount * eventManager.applePrice;
+        itemOrderPrice.text = eventManager.GetComponent<EventManager>().applePrice.ToString("0.00");
+        return appleAmount * eventManager.GetComponent<EventManager>().applePrice;
+    }
+
+    private float GenerateSolution()
+    {
+        float change = GenerateOrder();
+        Debug.Log(change);
+        change = eventManager.GetComponent<MoneyGrouper>().GeneratePayment(change) - change;
+        return change;
     }
 
    private IEnumerator Spin()

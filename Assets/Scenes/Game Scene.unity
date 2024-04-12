@@ -763,6 +763,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2d79597eb6ec24469b0165aa46488ab, type: 3}
+--- !u!1 &149470442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 149470443}
+  m_Layer: 0
+  m_Name: Coin Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &149470443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149470442}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.43265668, y: 0, z: 0.6589524}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1891828934}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &175674560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,6 +1601,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4490757099562422602, guid: 8db73510d14412342b95cbc38474fa7a, type: 3}
   m_PrefabInstance: {fileID: 523910023}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &289997937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289997938}
+  m_Layer: 0
+  m_Name: Dollar Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &289997938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289997937}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.17265677, y: 0, z: -0.34504756}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1007663082}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &296766947
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,7 +3460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 94.44
+  m_text: 0.00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e2ffed8532775840b6082efa82ebc4e, type: 2}
   m_sharedMaterial: {fileID: 2047544814073296540, guid: 2e2ffed8532775840b6082efa82ebc4e, type: 2}
@@ -3747,6 +3809,37 @@ Transform:
   - {fileID: 1007663082}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &659332228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 659332229}
+  m_Layer: 0
+  m_Name: Coin Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &659332229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659332228}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.17265677, y: 0, z: 0.6589524}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1007663082}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &661418450
 GameObject:
   m_ObjectHideFlags: 0
@@ -3804,7 +3897,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ghfgfgf
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b9e32f6b9bae5f44e8a476c2a1aaf441, type: 2}
   m_sharedMaterial: {fileID: -8370880040636768296, guid: b9e32f6b9bae5f44e8a476c2a1aaf441, type: 2}
@@ -5285,6 +5378,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 289997938}
+  - {fileID: 659332229}
   - {fileID: 2019708431}
   - {fileID: 938883414}
   - {fileID: 1019608336}
@@ -5364,6 +5459,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1010584242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2944892977755395379, guid: ecf72d1accb6c444384df92193b480d1, type: 3}
+  m_PrefabInstance: {fileID: 3639060714914392960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1019608335
 GameObject:
   m_ObjectHideFlags: 0
@@ -5855,10 +5955,11 @@ MonoBehaviour:
   submissionDollars: 0
   tipCoins: 0
   tipDollars: 0
-  twentyDollar: {fileID: 0}
-  tenDollar: {fileID: 0}
+  twentyDollar: {fileID: 1010584242}
+  tenDollar: {fileID: 2083019089}
   fiveDollar: {fileID: 8810653898608613743, guid: 8db73510d14412342b95cbc38474fa7a, type: 3}
   oneDollar: {fileID: 6053971130530389479, guid: 80f55ee575060f9458946336de270835, type: 3}
+  moneySpawn: {fileID: 640005050}
   grouper: {fileID: 4183982123696054602, guid: d1259d9fb17d9da4eb899b9fd1cf2782, type: 3}
 --- !u!82 &1088261719
 AudioSource:
@@ -7004,6 +7105,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: =
+--- !u!1 &1331937176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1331937177}
+  m_Layer: 0
+  m_Name: Dollar Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1331937177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331937176}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.43265668, y: 0, z: -0.39004758}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1891828934}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339825615
 GameObject:
   m_ObjectHideFlags: 0
@@ -9469,6 +9601,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1331937177}
+  - {fileID: 149470443}
   - {fileID: 1930846482}
   - {fileID: 1510026256}
   - {fileID: 848098232}
@@ -10528,6 +10662,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: '-'
+--- !u!1 &2083019089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1364004255887970414, guid: 9603bcfa23eec984cb45aa41ab0c39a2, type: 3}
+  m_PrefabInstance: {fileID: 6022439106382394814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2106669075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11480,6 +11619,10 @@ PrefabInstance:
     - target: {fileID: 6705460868894317487, guid: bd456e4c8a423284b9dbb6151ce30fa6, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713208402949915304, guid: bd456e4c8a423284b9dbb6151ce30fa6, type: 3}
+      propertyPath: m_Volume
+      value: 0.676
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

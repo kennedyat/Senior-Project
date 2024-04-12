@@ -88,7 +88,7 @@ public class EventManager : MonoBehaviour
     private IEnumerator NewPrices()
     {
         applePrice = Mathf.Round(UnityEngine.Random.Range(2.0f,4.0f) * 100) / 100.0f;
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(60f);
         MarketShift();
     }
 
