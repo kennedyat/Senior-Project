@@ -6,24 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MonTrell Nelson/Scenes/START.unity
+    path: Assets/Scenes/START.unity
     guid: a1233214928a746168ade9036c30c0ac
   - enabled: 1
-    path: Assets/MonTrell Nelson/Scenes/Main Menu.unity
+    path: Assets/Scenes/Main Menu.unity
     guid: 9b8f13163756546aebc0c680f2f4d30c
   - enabled: 1
-    path: Assets/MonTrell Nelson/Scenes/Intro Scene.unity
+    path: Assets/Scenes/Intro Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/MonTrell Nelson/Scenes/Dialogue Scene.unity
     guid: f31994cba7ff74b0ba6ff335cd822190
   - enabled: 1
-    path: Assets/MonTrell Nelson/Scenes/placeholderscene.unity
-    guid: 0878bd6cd1c6042d59f129f17c688dbc
+    path: Assets/Scenes/Game Scene.unity
+    guid: c8175dfd4b7024640b895eb802032104
+  - enabled: 1
+    path: Assets/Scenes/END.unity
+    guid: f3b0a3f1c75b4462e88e212c1d4d3fac
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/MonTrell Nelson/Scenes/END.unity
-    guid: f3b0a3f1c75b4462e88e212c1d4d3fac
+    path: Assets/Scenes/placeholderscene.unity
+    guid: 0878bd6cd1c6042d59f129f17c688dbc
   m_configObjects: {}

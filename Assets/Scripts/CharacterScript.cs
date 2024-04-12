@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class CharacterScript : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class CharacterScript : MonoBehaviour
     private float yaxis=0;
 
     public int appleAmount;
+    public TMP_Text itemOrderAmount;
+    public TMP_Text itemOrderPrice;
 
     private EventManager eventManager;
 
@@ -49,6 +53,8 @@ public class CharacterScript : MonoBehaviour
     private float GenerateOrder()
     {
         appleAmount = Random.Range(1,13);
+        itemOrderAmount.text = appleAmount.ToString() + "X";
+        itemOrderPrice.text = eventManager.applePrice.ToString("0.00");
         return appleAmount * eventManager.applePrice;
     }
 

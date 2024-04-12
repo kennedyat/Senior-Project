@@ -61,6 +61,7 @@ public class RegisterState : MonoBehaviour
             Open();
              _anim.SetBool("OpenState", true);
             Debug.Log("Open State");
+            AudioManager.Instance.PlaySFX("Register Open");
             editView.Raise(this, "Edit");
         }else{
             mousePos= Input.mousePosition - GetMousePos();

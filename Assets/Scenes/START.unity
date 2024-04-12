@@ -285,7 +285,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: CARDBOARD MARKET
+  m_Text: "PAPER \nMART"
 --- !u!222 &922561130
 CanvasRenderer:
   m_ObjectHideFlags: 0
