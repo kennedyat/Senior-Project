@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,7 +42,7 @@ public class selection_component : MonoBehaviour
     private void OnDestroy()
     {
         face.GetComponent<Renderer>().material = originalMat;
-        transform.parent.gameObject.GetComponent<GroupValue>().SubtractValue(gameObject.GetComponent<DollarValue>().value);
+        //transform.parent.gameObject.GetComponent<GroupValue>().SubtractValue(gameObject.GetComponent<DollarValue>().value);
     }
 
     private GameObject getFaceObject(GameObject child){

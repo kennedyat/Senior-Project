@@ -64,7 +64,6 @@ public class CharacterScript : MonoBehaviour
 
    void StartOrder(InputAction.CallbackContext context)
    {
-        Debug.Log("Ordering...");
         if (ready2order)
         {
             solution = GenerateSolution();
