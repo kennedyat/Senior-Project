@@ -165,7 +165,6 @@ public class MoneyGrouper : MonoBehaviour
         {
             for (int c = 0; index < money.Count && c < cols && money[index].GetComponent<DollarValue>().value >= 1; c++, index++)
             {
-                Debug.Log(dollars.position + new Vector3(hspacing * c, 0, vspacing * r));
                 Instantiate(money[index], dollars.position - new Vector3(hspacing * c, 0, vspacing * r), money[index].transform.rotation);
             }
         }
