@@ -67,6 +67,12 @@ public class global_selection : MonoBehaviour
         //group.performed += Group;
     }
 
+    private void OnDisable()
+    {
+        selection.Disable();
+        inclusive.Disable();
+    }
+
     // Update is called once per frame
     void Update()
     {

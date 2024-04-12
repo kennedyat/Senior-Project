@@ -22,10 +22,7 @@ public class BoxCorners : MonoBehaviour
     {
         if (other.CompareTag("Money"))
         {
-            /*if (other.gameObject.GetComponent<DollarValue>().value >= 1)
-                moneyGrouper.dollars++;
-            else
-                moneyGrouper.coins++;*/
+            moneyGrouper.Add(gameObject.name, other.GetComponent<DollarValue>());
             other.gameObject.GetComponent<Draggable>().boundary = gameObject.GetComponent<BoxCorners>();
         }
     }
@@ -34,10 +31,7 @@ public class BoxCorners : MonoBehaviour
     {
         if (other.CompareTag("Money"))
         {
-            /*if (other.gameObject.GetComponent<DollarValue>().value >= 1)
-                moneyGrouper.dollars--;
-            else
-                moneyGrouper.coins--;*/
+            moneyGrouper.Remove(gameObject.name, other.GetComponent<DollarValue>());
             other.gameObject.GetComponent<Draggable>().boundary = null;
         }
     }
